@@ -1,0 +1,65 @@
+<meta name="description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
+<meta property="og:description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+<meta property="og:image" content="{{ .Site.BaseURL }}images/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+<meta property="twitter:description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+<meta property="twitter:image" content="{{ .Site.BaseURL }}images/og-image.jpg">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+    tailwind.config = {
+        theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], }, colors: { dark: '#0B0F19', } } }
+    }
+</script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { background-color: #0B0F19; color: #e2e8f0; }
+    .gradient-text { background: linear-gradient(to right, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    /* Scrollbar styling */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F19; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    /* Case study headings */
+    .prose h3 {
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+    .prose p {
+        color: #d1d5db;
+        margin-bottom: 1.5rem;
+    }
+    /* Case study lists with checkmarks */
+    .prose ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+    .prose ul li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #d1d5db;
+        margin-bottom: 0.5rem;
+    }
+    .prose ul li::before {
+        content: "✓";
+        color: #4ade80;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+</style>

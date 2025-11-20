@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior DevOps Architect | MaxInTheCloud.com</title>
+    <meta name="description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght[400;700]&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], }, colors: { dark: '#0B0F19', } } }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F19; color: #e2e8f0; }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Scrollbar styling for modal */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-[#0B0F19]/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-mono text-xl font-bold tracking-tighter text-white cursor-pointer">
+                <i class="fa-solid fa-terminal text-blue-500 mr-2"></i>MAXINTHECLOUD<span class="text-gray-500">.</span><span class="text-blue-500">DEVOPS.ARCHITECT</span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300 items-center">
+                <a href="#services" class="hover:text-blue-400 transition">Services</a>
+                <a href="#training" class="hover:text-blue-400 transition">Training</a> 
+                <a href="#testimonials" class="hover:text-blue-400 transition">References</a>
+                <a href="#work" class="hover:text-blue-400 transition">Case Studies</a>
+                <button onclick="openModal('protocol-modal')" class="text-green-400 hover:text-green-300 font-mono font-bold text-xs border border-green-900/50 bg-green-900/10 px-3 py-1 rounded">
+                    <i class="fa-solid fa-shield-halved mr-1"></i> Protocol Detail
+                </button>
+                <div id="nav-cta-placeholder"></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-6 relative overflow-hidden">
+        <div class="absolute top-20 right-0 w-1/3 h-1/3 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <span class="font-mono text-xs text-white bg-blue-900/50 border border-blue-800/50 px-3 py-1 rounded-full mb-8 inline-block">
+                <i class="fa-solid fa-cloud mr-1"></i> Hello, I'm Max
+            </span>
+            
+            <div id="status-badge-placeholder" class="font-mono text-blue-400 mb-8 text-sm flex flex-wrap gap-4">
+                <span class="bg-purple-900/20 border border-purple-900/50 text-purple-400 px-3 py-1 rounded flex items-center gap-2">
+                    <i class="fa-solid fa-robot"></i> MLOps & AI-Ready Architecture
+                </span>
+                <span class="bg-green-900/20 border border-green-900/50 text-green-400 px-3 py-1 rounded flex items-center gap-2">
+                    <i class="fa-solid fa-server"></i> 5-Year Zero-Downtime Record
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                Enterprise-Grade <br> <span class="gradient-text">Cloud Infrastructure</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mb-6 leading-relaxed">
+                Senior DevOps Architect backed by a long-term **business entity (since 2005)**. I architect self-healing Azure environments where security and cost-efficiency are guaranteed by code.
+            </p>
+
+            <div class="mb-10 p-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg max-w-3xl">
+                <h3 class="text-white font-bold mb-1 text-lg"><i class="fa-solid fa-shield-halved text-green-400 mr-2"></i> **Risk-Free Assessment Guarantee**</h3>
+                <p class="text-gray-400 text-base">
+                    If my initial 14-day architecture audit doesn't demonstrate clear ROI, **you don't pay the invoice**. No questions asked.
+                </p>
+            </div>
+            
+            <div id="hero-cta-placeholder" class="flex flex-col sm:flex-row gap-4">
+                </div>
+
+        </div>
+    </section>
+
+    <section class="py-10 border-y border-gray-800 bg-black/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center font-mono text-gray-600 text-xs uppercase tracking-[0.2em] mb-8">Trusted by Fortune 500</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center items-center justify-center">
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">Novo Nordisk</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">MSD</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">BNP Paribas</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">IBM</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">DHL</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">OMV</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">MunichRe</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">PwC</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">Komerční banka</span>
+                </div>
+                <div class="flex justify-center p-2">
+                    <span class="text-gray-500 hover:text-white transition-colors duration-300">Linde</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="py-24 px-6 bg-[#0B0F19]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Engagement Models</h2>
+                <p class="text-gray-400">Flexible cooperation based on your needs.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 relative overflow-hidden">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-users text-blue-500 mr-2"></i> Staff Augmentation</h3>
+                    <p class="text-gray-400 mb-4">I join your team as a Senior Architect/Lead. I mentor, review code, and drive strategy.</p>
+                    <span class="text-xs font-mono bg-blue-900/20 text-blue-400 px-2 py-1 rounded">MONTHLY RETAINER</span>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 relative overflow-hidden">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-bullseye text-purple-500 mr-2"></i> Project Delivery</h3>
+                    <p class="text-gray-400 mb-4">Fixed scope. I solve a specific problem (Migration, Audit, Tooling) and hand it over.</p>
+                    <span class="text-xs font-mono bg-purple-900/20 text-purple-400 px-2 py-1 rounded">FIXED PRICE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="training" class="py-24 px-6 bg-[#0f1623] border-y border-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-4 text-center"><i class="fa-solid fa-chalkboard-teacher text-green-400 mr-2"></i> Custom DevOps Training</h2>
+            <p class="text-xl text-gray-400 text-center mb-12">
+                Accelerate your team's maturity with hands-on workshops tailored to your existing architecture (Azure, Terraform, GitOps).
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-xl bg-[#111827] border border-green-800/50">
+                    <h3 class="font-bold text-white mb-2"><i class="fa-solid fa-code mr-2 text-green-400"></i> Code-Centric Best Practices</h3>
+                    <p class="text-gray-400 text-sm">
+                        Focus on **modular Terraform design**, advanced CI/CD patterns (GitHub Actions), and GitOps principles directly applicable to your repository standards.
+                    </p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-green-800/50">
+                    <h3 class="font-bold text-white mb-2"><i class="fa-solid fa-puzzle-piece mr-2 text-green-400"></i> Contextual Workshops</h3>
+                    <p class="text-gray-400 text-sm">
+                        Training based on **your specific Azure environment** and challenges, not generic examples. Ensures maximum relevance and immediate adoption by the team.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                 <a href="mailto:email@example.com?subject=Inquiry:Custom DevOps Training" class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded transition inline-block">Request a Custom Curriculum</a>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="py-24 px-6 bg-[#0B0F19]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">What Clients Say</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="p-8 rounded-xl bg-[#111827] border border-gray-800">
+                    <i class="fa-solid fa-quote-left text-3xl text-gray-600 mb-4"></i>
+                    <blockquote class="text-gray-300 italic text-lg mb-6 leading-relaxed">
+                        "He transformed our chaotic infrastructure into a predictable, MLOps-ready platform. The 14-day audit alone justified the entire investment. His strategic guidance is unmatched."
+                    </blockquote>
+                    <p class="font-bold text-white">J. Kovář</p>
+                    <p class="text-sm text-blue-400">CTO, Leading E-commerce Company</p>
+                </div>
+
+                <div class="p-8 rounded-xl bg-[#111827] border border-gray-800">
+                    <i class="fa-solid fa-quote-left text-3xl text-gray-600 mb-4"></i>
+                    <blockquote class="text-gray-300 italic text-lg mb-6 leading-relaxed">
+                        "His Terraform standards became the foundation for our entire engineering team. He's not just an architect; he's a highly organized force multiplier who instantly became a predictable member of our Scrum team."
+                    </blockquote>
+                    <p class="font-bold text-white">M. Richter</p>
+                    <p class="text-sm text-purple-400">Senior DevOps Manager, Global Finance</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#111827] border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-4 text-center">My Core Engineering Principles</h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-12">
+                I deliver **State of the Art** code designed for long-term auditability, maintainability, and team independence.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-6 rounded-xl border border-purple-500/50 bg-purple-900/10">
+                    <i class="fa-solid fa-robot text-2xl text-purple-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-1">State-of-the-Art Code & MLOps</h3>
+                    <p class="text-gray-400 text-sm">
+                        Strict modularity, readability, and clean code principles. I design IaC ready to handle complex **AI/ML** training and serving pipelines (MLOps).
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-green-500/50 bg-green-900/10">
+                    <i class="fa-solid fa-book-open-reader text-2xl text-green-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-1">Versioned Documentation</h3>
+                    <p class="text-gray-400 text-sm">
+                        I deliver complete **Runbooks** and architectural diagrams (**C4 Model**) alongside the code, guaranteeing zero vendor lock-in and immediate team takeover.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-red-500/50 bg-red-900/10">
+                    <i class="fa-solid fa-lock text-2xl text-red-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-1">Mandatory Security</h3>
+                    <p class="text-gray-400 text-sm">
+                        Security is automated and enforced via **IaC Scans** and **Azure Policy**. Every Pull Request must pass checks before deployment (**Security Shift Left**).
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-xl border border-blue-500/50 bg-blue-900/10">
+                    <i class="fa-solid fa-sitemap text-2xl text-blue-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-1">Leadership & Process Rigor</h3>
+                    <p class="text-gray-400 text-sm">
+                        I drive team maturity through mentoring, and integrate seamlessly into **Agile/Scrum workflows**, ensuring structured delivery and **predictable project velocity**.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="work" class="py-24 px-6 bg-[#0B0F19]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Engineering Case Studies</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-yellow-500 transition group cursor-pointer" onclick="openCaseStudy('finops')">
+                    <div class="w-12 h-12 bg-yellow-900/20 text-yellow-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Custom FinOps Intelligence</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Developing a proprietary cost-analysis tool that outperformed Azure Advisor and saved 25% of cloud spend.</p>
+                    <span class="text-yellow-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-blue-500 transition group cursor-pointer" onclick="openCaseStudy('governance')">
+                    <div class="w-12 h-12 bg-blue-900/20 text-blue-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-brands fa-github"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Governance as Code</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Automating security policies across 500+ repositories ensuring 100% compliance without manual intervention.</p>
+                    <span class="text-blue-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-purple-500 transition group cursor-pointer" onclick="openCaseStudy('migration')">
+                    <div class="w-12 h-12 bg-purple-900/20 text-purple-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-dolly"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Unified CI/CD Migration</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Migrating complex pipelines from Jenkins/ADO to GitHub Actions with zero downtime and full Terraform adoption.</p>
+                    <span class="text-purple-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-[#0f1623] border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">Certifications & Expertise</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-white font-bold"><i class="fa-brands fa-microsoft text-blue-500 text-xl"></i> Azure Solutions Architect Expert</div>
+                    <div class="flex items-center gap-4 text-white font-bold"><i class="fa-brands fa-microsoft text-blue-500 text-xl"></i> DevOps Engineer Expert</div>
+                    <div class="flex items-center gap-4 text-white font-bold"><i class="fa-solid fa-cube text-purple-500 text-xl"></i> HashiCorp Certified: Terraform</div>
+                    <div class="flex items-center gap-4 text-white font-bold"><i class="fa-solid fa-list-check text-green-500 text-xl"></i> ITIL V3/V4 Operational Framework</div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">Key Tooling & Secondary Stack</h3>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <i class="fa-brands fa-docker text-4xl text-blue-400"></i>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">Docker</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-dharmachakra text-4xl text-sky-500"></i>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">Kubernetes</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-chart-bar text-4xl text-orange-500"></i>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">Prometheus/G</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-brands fa-git-alt text-4xl text-red-500"></i>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">Git/Version C.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-network-wired text-4xl text-green-500"></i>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">Networking/VPN</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa-solid fa-shield-halved text-4xl text-yellow-500"></i>
+                        <p class="text-xs text-gray-400 mt-1 font-mono">Security/Audit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agency-notice" class="py-16 px-6 border-t border-gray-800 bg-[#0B0F19]">
+        <div class="max-w-6xl mx-auto p-8 rounded-xl border border-gray-700 bg-[#111827] shadow-xl">
+            <div class="flex items-center gap-4 mb-6">
+                <i class="fa-solid fa-briefcase text-3xl text-red-500"></i>
+                <h2 class="text-3xl font-extrabold text-white">Recruiter & Agency Notice</h2>
+            </div>
+            
+            <p class="text-lg text-gray-400 mb-8">
+                Thank you for reviewing my profile. To ensure efficiency, please note my professional requirements.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-sm">
+                
+                <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
+                    <h3 class="font-bold text-red-400 mb-1"><i class="fa-solid fa-file-contract mr-2"></i> Engagement & Status</h3>
+                    <p class="text-white">Strictly **B2B Contract / Freelance**.</p>
+                    <p class="text-xs text-gray-500 mt-1">Operating through my own company established in **2005**, guaranteeing long-term stability and compliance.</p>
+                </div>
+                
+                <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
+                    <h3 class="font-bold text-blue-400 mb-1"><i class="fa-solid fa-code-branch mr-2"></i> Tech & Seniority Focus</h3>
+                    <p class="text-white">Minimum 5+ years experience required in **Azure & Terraform** IaC.</p>
+                    <p class="text-xs text-gray-500 mt-1">Please only submit high-value roles matching this specific stack. Not considering permanent (HPP) roles.</p>
+                </div>
+
+                <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
+                    <h3 class="font-bold text-yellow-400 mb-1"><i class="fa-solid fa-location-dot mr-2"></i> Location & Travel</h3>
+                    <p class="text-white">Primarily remote engagement (EU timezones).</p>
+                    <p class="text-xs text-gray-500 mt-1">Willing to travel for high-impact on-site meetings (kick-offs, workshops) with teams across **Europe and the USA**.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-yellow-900/20 rounded border border-yellow-800/50">
+                <p class="text-yellow-400 font-bold text-sm">
+                    <i class="fa-solid fa-triangle-exclamation mr-2"></i> Qualification Requirement:
+                </p>
+                <p class="text-yellow-200 text-sm mt-1">
+                    For a quick reply, please include the **client name and budget range** in your initial email.
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer id="contact" class="bg-black py-24 px-6 border-t border-gray-800 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-6">Let's talk infrastructure.</h2>
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="mailto:email@example.com" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded">Email Me</a>
+                <a href="https://linkedin.com" target="_blank" class="px-8 py-4 bg-[#0077b5] text-white font-bold rounded"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <p class="text-gray-600 text-xs font-mono mt-20">Built with Terraform & Azure Static Web Apps. Brand: MaxInTheCloud.com.</p>
+        </div>
+    </footer>
+
+    <div id="case-study-modal" class="hidden fixed inset-0 z-[100] bg-black/95 overflow-y-auto backdrop-blur-sm">
+        <div class="min-h-screen px-6 py-20 flex justify-center">
+            <div class="max-w-4xl w-full relative">
+                <button onclick="closeModal('case-study-modal')" class="fixed top-6 right-6 text-gray-400 hover:text-white z-50 bg-gray-800/50 p-2 rounded-full"><i class="fa-solid fa-xmark text-3xl"></i></button>
+                
+                <div id="modal-content">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="protocol-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-[#111827] border border-gray-700 rounded-2xl max-w-3xl w-full p-8 relative shadow-2xl">
+            <button onclick="closeModal('protocol-modal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            <h2 class="text-2xl font-bold text-white mb-2">My 30-Day Onboarding Protocol</h2>
+            <p class="text-gray-400 mb-6 text-sm">Eliminating uncertainty with a structured start.</p>
+            <div class="space-y-4 text-sm">
+                <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">W1</div><div class="text-gray-300"><strong>Audit & Discovery:</strong> Access setup, mapping architecture, identifying security holes.</div></div>
+                <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">W2</div><div class="text-gray-300"><strong>Quick Wins (FinOps):</strong> Running cost scanners. <span class="text-green-400">Often pays for the invoice itself.</span></div></div>
+                <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">W3</div><div class="text-gray-300"><strong>Roadmap Presentation:</strong> 6-12 month plan for IaC adoption & Migration.</div></div>
+                <div class="flex gap-4"><div class="font-mono text-green-400 font-bold w-8">W4</div><div class="text-gray-300"><strong>Production Deliverable:</strong> First automated pipeline/module shipped.</div></div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-800 bg-blue-900/10 p-4 rounded border border-blue-900/30 text-center">
+                <p class="text-green-400 font-bold text-sm"><i class="fa-solid fa-shield-halved"></i> Risk-Free Guarantee</p>
+                <p class="text-xs text-gray-400 mt-1">If you are not satisfied with the audit and roadmap presented in Week 3, the contract can be terminated immediately with zero cost to you.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="notify-modal-placeholder"></div>
+    
+    <script>
+        // --- 0. KONFIGURACE DOSTUPNOSTI (Změňte POUZE tyto dvě proměnné) ---
+        const availabilityStatus = 'free'; // Může být 'free', 'partial', nebo 'busy'
+        const nextAvailabilityDate = 'Q2 2026'; // Zobrazí se jen, když je 'busy'
+
+        const statusMap = {
+            'free': {
+                icon: 'fa-solid fa-circle-check',
+                color: 'text-green-400',
+                bg: 'bg-green-900/30 border-green-800',
+                text: 'Available for New Projects',
+                cta_hero_html: '<a href="mailto:email@example.com" class="px-8 py-4 bg-white text-black font-bold rounded hover:bg-gray-200 transition text-center">Book a Consultation</a>',
+                cta_nav_html: '<a href="mailto:email@example.com" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-bold uppercase tracking-wider transition">Hire Me</a>',
+                cta_label: 'Hire Me'
+            },
+            'partial': {
+                icon: 'fa-solid fa-bell',
+                color: 'text-yellow-400',
+                bg: 'bg-yellow-900/30 border-yellow-800',
+                text: 'Limited Capacity (Project Review Only)',
+                cta_hero_html: '<a href="mailto:email@example.com" class="px-8 py-4 bg-yellow-600 text-black font-bold rounded hover:bg-yellow-700 transition text-center">Inquire Availability</a>',
+                cta_nav_html: '<a href="mailto:email@example.com" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-black rounded text-xs font-bold uppercase tracking-wider transition">Inquire</a>',
+                cta_label: 'Inquire'
+            },
+            'busy': {
+                icon: 'fa-solid fa-calendar-alt',
+                color: 'text-red-400',
+                bg: 'bg-red-900/30 border-red-800',
+                text: `Fully Booked (Available ${nextAvailabilityDate})`,
+                cta_hero_html: `
+                    <button onclick="openModal('notify-modal')" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded transition text-center">Notify Me When Available</button>
+                    <a href="#work" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>
+                `,
+                cta_nav_html: '<button onclick="openModal(\'notify-modal\')" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-xs font-bold uppercase tracking-wider transition">Notify</button>',
+                cta_label: 'Notify'
+            }
+        };
+
+        // --- 1. DATA LIBRARY (Obsah Case Studies s kvantifikací) ---
+        const caseStudiesData = {
+            "finops": {
+                title: "Custom FinOps Intelligence Tool",
+                tags: ["Azure Cost Management", "Python Automation", "Terraform"],
+                colorClass: "text-yellow-500",
+                bgClass: "bg-yellow-500",
+                icon: "fa-solid fa-magnifying-glass-dollar",
+                content: `<h3 class="text-white text-xl font-bold mb-4">The Challenge</h3><p class="text-gray-300 mb-6">A Logistics client faced a cloud bill growing 15% MoM. Azure Advisor was insufficient, missing context-specific waste like "zombie" dev environments running over weekends, and over-provisioned SQL resources.</p><h3 class="text-white text-xl font-bold mb-4">My Solution</h3><p class="text-gray-300 mb-6">I developed a <strong>proprietary Python crawler</strong> (Azure Function) that interacts directly with the Azure Resource Graph. It enforces tagging, identifies unattached disks/IPs, and auto-scales non-prod environments based on business hours.</p><h3 class="text-white text-xl font-bold mb-4">The Impact</h3><div class="grid grid-cols-3 gap-4 mb-8 text-center"><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-green-400">$120,000</div><div class="text-[10px] text-gray-500 uppercase">Annual Cost Saved</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-blue-400">25%</div><div class="text-[10px] text-gray-500 uppercase">Bill Reduction</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-purple-400">100%</div><div class="text-[10px] text-gray-500 uppercase">Visibility</div></div></div>`
+            },
+            "governance": {
+                title: "Automated GitHub Governance at Scale",
+                tags: ["Governance as Code", "TypeScript", "Security"],
+                colorClass: "text-blue-500",
+                bgClass: "bg-blue-500",
+                icon: "fa-brands fa-github",
+                content: `<h3 class="text-white text-xl font-bold mb-4">The Challenge</h3><p class="text-gray-300 mb-6">Inconsistent security settings across 500+ repositories. Manual configuration led to security drifts, unprotected branches, and lack of audit trails.</p><h3 class="text-white text-xl font-bold mb-4">My Solution</h3><p class="text-gray-300 mb-6">Designed a <strong>Governance-as-Code engine</strong> based on custom GitHub Actions. It automatically enforces branch protection rules, requires signed commits, and manages team permissions strictly via code. This eliminated the risk of human error.</p><h3 class="text-white text-xl font-bold mb-4">The Impact</h3><div class="grid grid-cols-2 gap-4 mb-8 text-center"><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-green-400">500+</div><div class="text-[10px] text-gray-500 uppercase">Repos in Compliance</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-blue-400">100%</div><div class="text-[10px] text-gray-500 uppercase">Compliance Audit Pass</div></div></div>`
+            },
+            "migration": {
+                title: "Unified CI/CD Migration (Jenkins -> GitHub)",
+                tags: ["Migration", "GitHub Actions", "Terraform"],
+                colorClass: "text-purple-500",
+                bgClass: "bg-purple-500",
+                icon: "fa-solid fa-dolly",
+                content: `<h3 class="text-white text-xl font-bold mb-4">The Challenge </h3><p class="text-gray-300 mb-6">Fragmented pipelines across Jenkins and Azure DevOps caused high licensing costs and friction. The client needed a unified, modern platform.</p><h3 class="text-white text-xl font-bold mb-4">My Solution</h3><p class="text-gray-300 mb-6">Executed a complete, zero-downtime migration to GitHub Enterprise. Converted complex Groovy/YAML pipelines to optimized <strong>GitHub Actions</strong>. Standardized all provisioning via Terraform modules, reducing pipeline execution time by an average of 30%.</p><h3 class="text-white text-xl font-bold mb-4">The Impact</h3><div class="grid grid-cols-2 gap-4 mb-8 text-center"><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-green-400">30%</div><div class="text-[10px] text-gray-500 uppercase">Pipeline Speed Increase</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-white">Zero</div><div class="text-[10px] text-gray-500 uppercase">Downtime Migration</div></div></div>`
+            }
+        };
+
+        // --- 2. MODAL LOGIC ---
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Zabrání scrollování pozadí
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = ''; // Povolí scrollování pozadí
+            }
+        }
+
+        function openCaseStudy(id) {
+            const data = caseStudiesData[id];
+            if (!data) return;
+
+            const container = document.getElementById('modal-content');
+            
+            // Generování HTML pro modal z JSON dat
+            container.innerHTML = `
+                <div class="mb-8">
+                    <button onclick="closeModal('case-study-modal')" class="text-blue-500 hover:text-white font-mono text-sm mb-4 inline-block">&larr; Back to Overview</button>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 ${data.bgClass}/20 ${data.colorClass} rounded-lg flex items-center justify-center text-2xl">
+                            <i class="${data.icon}"></i>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white">${data.title}</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-8 font-mono text-xs text-gray-400">
+                        ${data.tags.map(tag => `<span class="bg-gray-800 border border-gray-700 px-3 py-1 rounded">${tag}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="prose prose-invert prose-lg max-w-none border-t border-gray-800 pt-8">
+                    ${data.content}
+                </div>
+
+                <div class="mt-12 pt-12 border-t border-gray-800 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Need similar results?</h3>
+                    <a href="mailto:email@example.com" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded inline-block">Book an Audit</a>
+                </div>
+            `;
+
+            openModal('case-study-modal');
+        }
+
+        // --- 3. LOGIKA VYKRESLENÍ DOSTUPNOSTI A EVENT LISTENERS ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const status = statusMap[availabilityStatus];
+            
+            // 1. Semafor v Hero sekci
+            const badgeHtml = `
+                <span class="${status.bg} ${status.color} px-3 py-1 rounded flex items-center gap-2">
+                    <i class="${status.icon}"></i> ${status.text}
+                </span>
+            `;
+            document.getElementById('status-badge-placeholder').insertAdjacentHTML('afterbegin', badgeHtml);
+            
+            // 2. CTA v Hero sekci
+            document.getElementById('hero-cta-placeholder').innerHTML = status.cta_hero_html + 
+                '<a href="#work" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>';
+
+            // 3. CTA v Navigaci
+            document.getElementById('nav-cta-placeholder').innerHTML = status.cta_nav_html;
+            
+            // 4. Pokud je 'busy', přidáme Notify Modal
+            if (availabilityStatus === 'busy') {
+                const notifyModalHtml = `
+                    <div id="notify-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+                        <div class="bg-[#111827] border border-gray-700 rounded-2xl max-w-xl w-full p-8 relative shadow-2xl">
+                            <button onclick="closeModal('notify-modal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fa-solid fa-xmark text-2xl"></i></button>
+                            <h2 class="text-2xl font-bold text-white mb-2">Notify Me When Available</h2>
+                            <p class="text-gray-400 mb-6 text-sm">
+                                My capacity is currently fully booked until ${nextAvailabilityDate}. 
+                                Leave your email below and I will contact you immediately when a slot opens up.
+                            </p>
+                            <form action="YOUR_FORM_BACKEND_ENDPOINT" method="POST" class="space-y-4">
+                                <input type="hidden" name="_subject" value="Availability Request - DevOps Architect">
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    placeholder="Your Professional Email" 
+                                    required
+                                    class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                                >
+                                <textarea 
+                                    name="project_scope" 
+                                    placeholder="Brief Project Scope (Optional)" 
+                                    rows="3"
+                                    class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                                ></textarea>
+                                <button type="submit" class="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded transition">
+                                    Sign Up for Notification
+                                </button>
+                            </form>
+                            <p class="text-xs text-gray-500 mt-4 text-center">Your data will be used solely for this notification purpose.</p>
+                        </div>
+                    </div>
+                `;
+                document.body.insertAdjacentHTML('beforeend', notifyModalHtml);
+            }
+
+            // Zavření modalu klávesou ESC (Zjednodušeno pro čistotu)
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal('case-study-modal');
+                    closeModal('protocol-modal');
+                    const notifyModal = document.getElementById('notify-modal');
+                    if (notifyModal) closeModal('notify-modal');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

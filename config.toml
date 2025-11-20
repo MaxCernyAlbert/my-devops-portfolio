@@ -1,0 +1,15 @@
+baseURL = "https://your-domain.com/"
+languageCode = "en"
+title = "Senior DevOps Architect | MaxInTheCloud.com"
+
+# Nastavujeme vlastní trvalé odkazy pro sekci práce
+[permalinks]
+  prace = "/prace/:slug/"
+
+[params]
+  description = "Architektura a kódování pro Azure/Terraform s garancí nulového výpadku."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

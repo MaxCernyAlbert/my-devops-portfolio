@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    
+    {{ partial "head.html" . }} 
+
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+    
+    {{ partial "nav.html" . }} 
+
+    <main class="flex-grow">
+        {{ block "main" . }}
+            {{ .Content }}
+        {{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+
+    {{ partial "modals.html" . }}
+    {{ partial "scripts.html" . }}
+
+</body>
+</html>

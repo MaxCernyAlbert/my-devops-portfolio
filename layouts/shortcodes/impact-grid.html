@@ -1,0 +1,22 @@
+<div class="grid grid-cols-{{ .Get "cols" | default "3" }} gap-4 mb-8 text-center">
+    {{ range split (trim .Inner " \n\r") "\n" }}
+        {{ $line := trim . " \n\r\t" }}
+        {{ if $line }}
+            {{ $parts := split $line "|" }}
+            {{ $value := trim (index $parts 0) " " }}
+            {{ $label := trim (index $parts 1) " " }}
+            {{ $color := trim (index $parts 2) " " }}
+            {{ $colorHex := "#60a5fa" }}
+            {{ if eq $color "green" }}{{ $colorHex = "#4ade80" }}{{ end }}
+            {{ if eq $color "blue" }}{{ $colorHex = "#60a5fa" }}{{ end }}
+            {{ if eq $color "purple" }}{{ $colorHex = "#c084fc" }}{{ end }}
+            {{ if eq $color "white" }}{{ $colorHex = "#ffffff" }}{{ end }}
+            {{ if eq $color "red" }}{{ $colorHex = "#f87171" }}{{ end }}
+            {{ if eq $color "yellow" }}{{ $colorHex = "#facc15" }}{{ end }}
+            <div class="p-4 bg-gray-800 rounded">
+                <div class="text-2xl font-bold" style="color: {{ $colorHex }} !important;">{{ $value }}</div>
+                <div class="text-[10px] text-gray-500 uppercase">{{ $label }}</div>
+            </div>
+        {{ end }}
+    {{ end }}
+</div>

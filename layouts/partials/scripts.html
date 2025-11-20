@@ -1,0 +1,217 @@
+<script>
+    // --- 0. KONFIGURACE DOSTUPNOSTI (Změňte POUZE tyto dvě proměnné) ---
+    const availabilityStatus = 'free'; // Může být 'free', 'partial', nebo 'busy'
+    const nextAvailabilityDate = 'Q2 2026'; // Zobrazí se jen, když je 'busy'
+
+    const statusMap = {
+        'free': {
+            icon: 'fa-solid fa-circle-check',
+            color: 'text-green-400',
+            bg: 'bg-green-900/30 border-green-800',
+            text: 'Available for New Projects',
+            cta_hero_html: '<a href="mailto:email@example.com" class="px-8 py-4 bg-white text-black font-bold rounded hover:bg-gray-200 transition text-center">Book a Consultation</a>',
+            cta_nav_html: '<a href="mailto:email@example.com" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-bold uppercase tracking-wider transition">Hire Me</a>',
+            cta_label: 'Hire Me'
+        },
+        'partial': {
+            icon: 'fa-solid fa-bell',
+            color: 'text-yellow-400',
+            bg: 'bg-yellow-900/30 border-yellow-800',
+            text: 'Limited Capacity (Project Review Only)',
+            cta_hero_html: '<a href="mailto:email@example.com" class="px-8 py-4 bg-yellow-600 text-black font-bold rounded hover:bg-yellow-700 transition text-center">Inquire Availability</a>',
+            cta_nav_html: '<a href="mailto:email@example.com" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-black rounded text-xs font-bold uppercase tracking-wider transition">Inquire</a>',
+            cta_label: 'Inquire'
+        },
+        'busy': {
+            icon: 'fa-solid fa-calendar-alt',
+            color: 'text-red-400',
+            bg: 'bg-red-900/30 border-red-800',
+            text: `Fully Booked (Available ${nextAvailabilityDate})`,
+            cta_hero_html: `
+                <button onclick="openModal('notify-modal')" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded transition text-center">Notify Me When Available</button>
+                <a href="#work" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>
+            `,
+            cta_nav_html: '<button onclick="openModal(\'notify-modal\')" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-xs font-bold uppercase tracking-wider transition">Notify</button>',
+            cta_label: 'Notify'
+        }
+    };
+
+    // --- 1. DATA LIBRARY (Obsah Case Studies s kvantifikací) ---
+    const caseStudiesData = {
+        "finops": {
+            title: "Custom FinOps Intelligence Tool",
+            tags: ["Azure Cost Management", "Python Automation", "Terraform"],
+            colorClass: "text-yellow-500",
+            bgClass: "bg-yellow-500",
+            icon: "fa-solid fa-magnifying-glass-dollar",
+            content: `<h3 class="text-white text-xl font-bold mb-4">The Challenge</h3><p class="text-gray-300 mb-6">A Logistics client faced a cloud bill growing 15% MoM. Azure Advisor was insufficient, missing context-specific waste like "zombie" dev environments running over weekends, and over-provisioned SQL resources.</p><h3 class="text-white text-xl font-bold mb-4">My Solution</h3><p class="text-gray-300 mb-6">I developed a <strong>proprietary Python crawler</strong> (Azure Function) that interacts directly with the Azure Resource Graph. It enforces tagging, identifies unattached disks/IPs, and auto-scales non-prod environments based on business hours.</p><h3 class="text-white text-xl font-bold mb-4">The Impact</h3><div class="grid grid-cols-3 gap-4 mb-8 text-center"><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-green-400">$120,000</div><div class="text-[10px] text-gray-500 uppercase">Annual Cost Saved</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-blue-400">25%</div><div class="text-[10px] text-gray-500 uppercase">Bill Reduction</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-purple-400">100%</div><div class="text-[10px] text-gray-500 uppercase">Visibility</div></div></div>`
+        },
+        "governance": {
+            title: "Automated GitHub Governance at Scale",
+            tags: ["Governance as Code", "TypeScript", "Security"],
+            colorClass: "text-blue-500",
+            bgClass: "bg-blue-500",
+            icon: "fa-brands fa-github",
+            content: `<h3 class="text-white text-xl font-bold mb-4">The Challenge</h3><p class="text-gray-300 mb-6">Inconsistent security settings across 500+ repositories. Manual configuration led to security drifts, unprotected branches, and lack of audit trails.</p><h3 class="text-white text-xl font-bold mb-4">My Solution</h3><p class="text-gray-300 mb-6">Designed a <strong>Governance-as-Code engine</strong> based on custom GitHub Actions. It automatically enforces branch protection rules, requires signed commits, and manages team permissions strictly via code. This eliminated the risk of human error.</p><h3 class="text-white text-xl font-bold mb-4">The Impact</h3><div class="grid grid-cols-2 gap-4 mb-8 text-center"><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-green-400">500+</div><div class="text-[10px] text-gray-500 uppercase">Repos in Compliance</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-blue-400">100%</div><div class="text-[10px] text-gray-500 uppercase">Compliance Audit Pass</div></div></div>`
+        },
+        "migration": {
+            title: "Unified CI/CD Migration (Jenkins -> GitHub)",
+            tags: ["Migration", "GitHub Actions", "Terraform"],
+            colorClass: "text-purple-500",
+            bgClass: "bg-purple-500",
+            icon: "fa-solid fa-dolly",
+            content: `<h3 class="text-white text-xl font-bold mb-4">The Challenge</h3><p class="text-gray-300 mb-6">Fragmented pipelines across Jenkins and Azure DevOps caused high licensing costs and friction. The client needed a unified, modern platform.</p><h3 class="text-white text-xl font-bold mb-4">My Solution</h3><p class="text-gray-300 mb-6">Executed a complete, zero-downtime migration to GitHub Enterprise. Converted complex Groovy/YAML pipelines to optimized <strong>GitHub Actions</strong>. Standardized all provisioning via Terraform modules, reducing pipeline execution time by an average of 30%.</p><h3 class="text-white text-xl font-bold mb-4">The Impact</h3><div class="grid grid-cols-2 gap-4 mb-8 text-center"><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-green-400">30%</div><div class="text-[10px] text-gray-500 uppercase">Pipeline Speed Increase</div></div><div class="p-4 bg-gray-800 rounded"><div class="text-2xl font-bold text-white">Zero</div><div class="text-[10px] text-gray-500 uppercase">Downtime Migration</div></div></div>`
+        }
+    };
+
+    // --- 2. MODAL LOGIC ---
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Zabrání scrollování pozadí
+        }
+    }
+
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Povolí scrollování pozadí
+        }
+    }
+
+    function openCaseStudy(id) {
+        const data = caseStudiesData[id];
+        if (!data) return;
+
+        const container = document.getElementById('modal-content');
+
+        // Generování HTML pro modal z JSON dat
+        container.innerHTML = `
+            <div class="mb-8">
+                <button onclick="closeModal('case-study-modal')" class="text-blue-500 hover:text-white font-mono text-sm mb-4 inline-block">&larr; Back to Overview</button>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 ${data.bgClass}/20 ${data.colorClass} rounded-lg flex items-center justify-center text-2xl">
+                        <i class="${data.icon}"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white">${data.title}</h2>
+                </div>
+                <div class="flex flex-wrap gap-2 mb-8 font-mono text-xs text-gray-400">
+                    ${data.tags.map(tag => `<span class="bg-gray-800 border border-gray-700 px-3 py-1 rounded">${tag}</span>`).join('')}
+                </div>
+            </div>
+
+            <div class="prose prose-invert prose-lg max-w-none border-t border-gray-800 pt-8">
+                ${data.content}
+            </div>
+
+            <div class="mt-12 pt-12 border-t border-gray-800 text-center">
+                <h3 class="text-2xl font-bold text-white mb-4">Need similar results?</h3>
+                <a href="mailto:email@example.com" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded inline-block">Book an Audit</a>
+            </div>
+        `;
+
+        openModal('case-study-modal');
+    }
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    // --- 3. LOGIKA VYKRESLENÍ DOSTUPNOSTI A EVENT LISTENERS ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const status = statusMap[availabilityStatus];
+
+        // 1. Semafor v Hero sekci
+        const badgeHtml = `
+            <span class="${status.bg} ${status.color} px-3 py-1 rounded flex items-center gap-2">
+                <i class="${status.icon}"></i> ${status.text}
+            </span>
+        `;
+        document.getElementById('status-badge-placeholder').insertAdjacentHTML('afterbegin', badgeHtml);
+
+        // 2. CTA v Hero sekci
+        document.getElementById('hero-cta-placeholder').innerHTML = status.cta_hero_html +
+            '<a href="#work" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>';
+
+        // 3. CTA v Navigaci
+        document.getElementById('nav-cta-placeholder').innerHTML = status.cta_nav_html;
+
+        // 4. Pokud je 'busy', přidáme Notify Modal
+        if (availabilityStatus === 'busy') {
+            const notifyModalHtml = `
+                <div id="notify-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+                    <div class="bg-[#111827] border border-gray-700 rounded-2xl max-w-xl w-full p-8 relative shadow-2xl">
+                        <button onclick="closeModal('notify-modal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fa-solid fa-xmark text-2xl"></i></button>
+                        <h2 class="text-2xl font-bold text-white mb-2">Notify Me When Available</h2>
+                        <p class="text-gray-400 mb-6 text-sm">
+                            My capacity is currently fully booked until ${nextAvailabilityDate}.
+                            Leave your email below and I will contact you immediately when a slot opens up.
+                        </p>
+                        <form action="YOUR_FORM_BACKEND_ENDPOINT" method="POST" class="space-y-4">
+                            <input type="hidden" name="_subject" value="Availability Request - DevOps Architect">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Professional Email"
+                                required
+                                class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                            >
+                            <textarea
+                                name="project_scope"
+                                placeholder="Brief Project Scope (Optional)"
+                                rows="3"
+                                class="w-full p-3 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500"
+                            ></textarea>
+                            <button type="submit" class="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded transition">
+                                Sign Up for Notification
+                            </button>
+                        </form>
+                        <p class="text-xs text-gray-500 mt-4 text-center">Your data will be used solely for this notification purpose.</p>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', notifyModalHtml);
+        }
+
+        // Zavření modalu klávesou ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal('case-study-modal');
+                closeModal('protocol-modal');
+                const notifyModal = document.getElementById('notify-modal');
+                if (notifyModal) closeModal('notify-modal');
+            }
+        });
+    });
+
+    // Zavření mobile menu při kliknutí mimo
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('mobile-menu');
+        const menuButton = e.target.closest('button[onclick*="toggleMobileMenu"]');
+
+        if (!menuButton && !menu.contains(e.target) && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+</script>
