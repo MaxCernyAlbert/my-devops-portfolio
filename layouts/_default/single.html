@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="pt-32 pb-20 px-6 bg-[#0B0F19]">
+    <div class="max-w-4xl mx-auto">
+        <a href="{{ site.BaseURL }}" class="text-blue-500 hover:text-white mb-8 inline-block font-mono text-sm">&larr; Back to Home</a>
+
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">{{ .Title }}</h1>
+
+        {{ with .Params.tags }}
+        <div class="flex flex-wrap gap-2 mb-8 font-mono text-xs text-gray-400">
+            {{ range . }}
+                <span class="bg-gray-800 border border-gray-700 px-3 py-1 rounded">{{ . }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <article class="prose prose-invert prose-lg max-w-none border-t border-gray-800 pt-8">
+            {{ .Content }}
+        </article>
+
+    </div>
+</section>
+{{ end }}

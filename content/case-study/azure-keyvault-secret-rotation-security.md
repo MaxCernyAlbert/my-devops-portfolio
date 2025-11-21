@@ -1,9 +1,9 @@
 ---
-title: "Azure Key Vault Secret Rotation - Automated Security Management"
+title: "Azure Key Vault Secret Rotation - Enterprise Security Automation"
 date: 2025-01-04
-description: "Azure security automation case study: Zero-touch credential lifecycle management with automated Service Principal and Storage Account key rotation to Key Vault, eliminating expired credentials."
-tags: ["Azure Key Vault", "Service Principals", "Security Automation", "Azure Functions", "Secret Rotation", "Azure DevOps"]
-keywords: ["azure key vault rotation", "secret rotation automation", "service principal management", "azure security automation", "credential management", "zero trust security"]
+description: "Azure security automation case study: Zero-touch credential lifecycle management with automated Service Principal and Storage Account key rotation. Enterprise-grade Azure Key Vault automation eliminating security risks."
+tags: ["Azure Key Vault", "Azure Security", "Security Automation", "Azure Functions", "Secret Rotation", "DevSecOps"]
+keywords: ["azure key vault automation", "secret rotation automation", "azure security compliance", "service principal management", "azure devops security", "enterprise security", "azure governance"]
 ---
 
 ### The Challenge

@@ -1,6 +1,6 @@
-{{- $defaultDescription := "Expert Azure Architect & Terraform DevOps Engineer serving Fortune 500 clients worldwide. Specializing in IaC, CI/CD pipelines, and cloud infrastructure automation." -}}
+{{- $defaultDescription := "Senior Azure DevOps Consultant & Cloud Architect with 20+ years enterprise experience. Specializing in Azure Landing Zones, Terraform & Bicep IaC, GitHub Actions, Azure Governance, High Availability, and DevSecOps for Fortune 500 clients." -}}
 {{- $description := .Params.description | default $defaultDescription -}}
-{{- $defaultKeywords := "azure devops, azure architect, terraform, infrastructure as code, cicd pipelines, devops engineer, cloud automation, github actions" -}}
+{{- $defaultKeywords := "azure devops consultant, azure cloud architect, terraform, bicep, infrastructure as code, azure landing zone, azure governance, azure networking, azure security, high availability, scalability, github actions, azure devops pipelines, ci/cd automation, devsecops, kubernetes, aks, enterprise cloud architecture, disaster recovery, multi-region" -}}
 {{- $keywords := "" -}}
 {{- if .Params.keywords -}}
     {{- $keywords = delimit .Params.keywords ", " -}}
@@ -13,6 +13,10 @@
 <meta name="author" content="Max - Azure DevOps Architect">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ .Permalink }}">
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
@@ -78,4 +82,67 @@
         font-weight: bold;
         font-size: 1.1rem;
     }
+    /* Mermaid dark theme overrides */
+    .mermaid-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, rgba(30,41,59,0.5) 0%, rgba(15,23,42,0.5) 100%);
+        border-radius: 1rem;
+        border: 1px solid #334155;
+    }
+    .mermaid {
+        background: transparent !important;
+        font-size: 18px !important;
+    }
+    .mermaid .node rect,
+    .mermaid .node circle,
+    .mermaid .node polygon {
+        stroke-width: 2px !important;
+    }
+    .mermaid .edgeLabel {
+        font-size: 14px !important;
+        font-weight: 600 !important;
+    }
+    .mermaid .label {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+    }
 </style>
+
+<!-- Mermaid.js for diagrams -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        themeVariables: {
+            darkMode: true,
+            background: 'transparent',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '18px',
+            primaryColor: '#3b82f6',
+            primaryTextColor: '#ffffff',
+            primaryBorderColor: '#3b82f6',
+            secondaryColor: '#8b5cf6',
+            tertiaryColor: '#111827',
+            lineColor: '#64748b',
+            textColor: '#ffffff',
+            mainBkg: '#1e293b',
+            nodeBorder: '#475569',
+            clusterBkg: '#0f172a',
+            clusterBorder: '#334155',
+            titleColor: '#ffffff',
+            edgeLabelBackground: '#1e293b',
+            nodeTextColor: '#ffffff'
+        },
+        flowchart: {
+            curve: 'basis',
+            padding: 30,
+            htmlLabels: true,
+            useMaxWidth: false,
+            nodeSpacing: 80,
+            rankSpacing: 100
+        }
+    });
+</script>

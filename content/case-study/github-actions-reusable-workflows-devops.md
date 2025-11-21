@@ -1,9 +1,9 @@
 ---
-title: "GitHub Actions Reusable Workflows - DevOps Self-Service Platform"
+title: "GitHub Actions Reusable Workflows - Enterprise CI/CD Platform"
 date: 2025-01-06
-description: "CI/CD automation case study: Modular, versioned GitHub Actions library enabling developer self-service pipeline creation, reducing DevOps tickets by 95% and pipeline setup time by 80%."
-tags: ["GitHub Actions", "Developer Experience", "Documentation", "CI/CD", "Reusable Workflows", "DevOps"]
-keywords: ["github actions reusable workflows", "cicd pipeline automation", "devops self-service", "github actions library", "developer experience", "pipeline templates"]
+description: "Enterprise CI/CD automation case study: Modular GitHub Actions library for Azure deployments enabling developer self-service. 95% reduction in DevOps tickets, 80% faster pipeline setup with Terraform integration."
+tags: ["GitHub Actions", "CI/CD Automation", "Azure DevOps", "Terraform", "Reusable Workflows", "DevOps"]
+keywords: ["github actions reusable workflows", "azure devops pipelines", "cicd automation", "terraform github actions", "developer self-service", "enterprise ci/cd", "azure deployment automation"]
 ---
 
 ### The Challenge

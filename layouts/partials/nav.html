@@ -1,18 +1,30 @@
+{{ $isCS := eq .Site.Language.Lang "cs" }}
+{{ $baseURL := .Site.BaseURL }}
+{{ $langToggleURL := cond $isCS (strings.TrimSuffix "/" .Site.BaseURL | printf "%s/") (printf "%scs/" (strings.TrimSuffix "/" .Site.BaseURL)) }}
+
 <nav class="fixed w-full z-50 bg-[#0B0F19]/90 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="{{ site.BaseURL }}" class="font-mono text-xl font-bold tracking-tighter text-white cursor-pointer">
+        <a href="{{ $baseURL }}" class="font-mono text-xl font-bold tracking-tighter text-white cursor-pointer">
             <i class="fa-solid fa-terminal text-blue-500 mr-2"></i>MAXINTHECLOUD<span class="text-gray-500">.</span><span class="text-blue-500">DEVOPS.ARCHITECT</span>
         </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300 items-center">
-            <a href="{{ site.BaseURL }}#services" class="hover:text-blue-400 transition">Services</a>
-            <a href="{{ site.BaseURL }}#training" class="hover:text-blue-400 transition">Training</a>
-            <a href="{{ site.BaseURL }}#testimonials" class="hover:text-blue-400 transition">References</a>
-            <a href="{{ site.BaseURL }}#case-studies" class="hover:text-blue-400 transition">Case Studies</a>
+            <a href="{{ $baseURL }}#services" class="hover:text-blue-400 transition">{{ if $isCS }}Služby{{ else }}Services{{ end }}</a>
+            <a href="{{ $baseURL }}#training" class="hover:text-blue-400 transition">{{ if $isCS }}Školení{{ else }}Training{{ end }}</a>
+            <a href="{{ $baseURL }}#testimonials" class="hover:text-blue-400 transition">{{ if $isCS }}Reference{{ else }}References{{ end }}</a>
+            <a href="{{ $baseURL }}#case-studies" class="hover:text-blue-400 transition">Case Studies</a>
             <button onclick="openModal('protocol-modal')" class="text-green-400 hover:text-green-300 font-mono font-bold text-xs border border-green-900/50 bg-green-900/10 px-3 py-1 rounded">
-                <i class="fa-solid fa-shield-halved mr-1"></i> Protocol Detail
+                <i class="fa-solid fa-shield-halved mr-1"></i> {{ if $isCS }}Detail protokolu{{ else }}Protocol Detail{{ end }}
             </button>
+            <!-- Language Switcher -->
+            <a href="{{ $langToggleURL }}" class="flex items-center gap-2 text-gray-400 hover:text-white transition border border-gray-700 px-3 py-1 rounded">
+                {{ if $isCS }}
+                <span class="fi fi-gb" style="font-size: 1rem;"></span> EN
+                {{ else }}
+                <span class="fi fi-cz" style="font-size: 1rem;"></span> CZ
+                {{ end }}
+            </a>
             <div id="nav-cta-placeholder"></div>
         </div>
 
@@ -25,13 +37,21 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#0B0F19] border-t border-gray-800">
         <div class="px-6 py-4 flex flex-col gap-4">
-            <a href="{{ site.BaseURL }}#services" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">Services</a>
-            <a href="{{ site.BaseURL }}#training" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">Training</a>
-            <a href="{{ site.BaseURL }}#testimonials" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">References</a>
-            <a href="{{ site.BaseURL }}#case-studies" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">Case Studies</a>
+            <a href="{{ $baseURL }}#services" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">{{ if $isCS }}Služby{{ else }}Services{{ end }}</a>
+            <a href="{{ $baseURL }}#training" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">{{ if $isCS }}Školení{{ else }}Training{{ end }}</a>
+            <a href="{{ $baseURL }}#testimonials" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">{{ if $isCS }}Reference{{ else }}References{{ end }}</a>
+            <a href="{{ $baseURL }}#case-studies" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-blue-400 transition py-2">Case Studies</a>
             <button onclick="openModal('protocol-modal'); toggleMobileMenu()" class="text-green-400 hover:text-green-300 font-mono font-bold text-xs border border-green-900/50 bg-green-900/10 px-3 py-2 rounded text-left">
-                <i class="fa-solid fa-shield-halved mr-1"></i> Protocol Detail
+                <i class="fa-solid fa-shield-halved mr-1"></i> {{ if $isCS }}Detail protokolu{{ else }}Protocol Detail{{ end }}
             </button>
+            <!-- Mobile Language Switcher -->
+            <a href="{{ $langToggleURL }}" class="flex items-center gap-2 text-gray-400 hover:text-white transition border border-gray-700 px-3 py-2 rounded">
+                {{ if $isCS }}
+                <span class="fi fi-gb" style="font-size: 1rem;"></span> Switch to English
+                {{ else }}
+                <span class="fi fi-cz" style="font-size: 1rem;"></span> Přepnout do češtiny
+                {{ end }}
+            </a>
         </div>
     </div>
 </nav>

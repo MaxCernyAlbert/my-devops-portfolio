@@ -1,13 +1,29 @@
 baseURL = "https://maxinthecloud.com/"
-languageCode = "en"
-title = "Senior DevOps Architect | MaxInTheCloud.com"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
-# Nastavujeme vlastní trvalé odkazy pro sekci práce
+[languages]
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    weight = 1
+    title = "Senior Azure DevOps Consultant | Enterprise Cloud Architect | MaxInTheCloud.com"
+    [languages.en.params]
+      description = "Senior Azure DevOps Consultant specializing in Landing Zones, Terraform IaC, GitHub Actions, and enterprise cloud architecture for Fortune 500 clients."
+
+  [languages.cs]
+    languageCode = "cs"
+    languageName = "Čeština"
+    weight = 2
+    title = "Senior Azure DevOps Konzultant | Enterprise Cloud Architekt | MaxInTheCloud.com"
+    [languages.cs.params]
+      description = "Senior Azure DevOps konzultant specializující se na Landing Zones, Terraform IaC, GitHub Actions a enterprise cloudovou architekturu pro Fortune 500 klienty."
+
 [permalinks]
-  prace = "/prace/:slug/"
+  "case-study" = "/case-study/:slug/"
 
 [params]
-  description = "Architektura a kódování pro Azure/Terraform s garancí nulového výpadku."
+  description = "Senior Azure DevOps Consultant specializing in Landing Zones, Terraform IaC, GitHub Actions, and enterprise cloud architecture for Fortune 500 clients."
 
 [markup]
   [markup.goldmark]

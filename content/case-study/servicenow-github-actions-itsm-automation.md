@@ -1,9 +1,9 @@
 ---
-title: "ServiceNow GitHub Actions ITSM Automation - FastRFC Integration"
+title: "ServiceNow GitHub Actions ITSM Automation - Enterprise Change Management"
 date: 2025-01-05
-description: "ITSM automation case study: Automated ServiceNow FastRFC change management integrated with GitHub Actions, enabling 100% compliant deployments with zero manual RFC creation."
-tags: ["ServiceNow API", "GitHub Actions", "ITSM Integration", "Automation", "Change Management", "DevOps"]
-keywords: ["servicenow github actions", "itsm automation", "change management automation", "fastrfc integration", "devops compliance", "automated deployments"]
+description: "Enterprise ITSM automation case study: Automated ServiceNow FastRFC integration with GitHub Actions for Azure deployments. 100% compliant change management with zero manual intervention."
+tags: ["ServiceNow API", "GitHub Actions", "ITSM Integration", "Azure DevOps", "Change Management", "Enterprise"]
+keywords: ["servicenow github actions", "azure devops itsm", "change management automation", "enterprise compliance", "devops governance", "azure deployment compliance"]
 ---
 
 ### The Challenge

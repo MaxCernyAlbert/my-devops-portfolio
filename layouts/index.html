@@ -1,9 +1,10 @@
 {{ define "main" }}
+{{ $isCS := eq .Site.Language.Lang "cs" }}
     <section class="pt-40 pb-20 px-6 relative overflow-hidden">
         <div class="absolute top-20 right-0 w-1/3 h-1/3 bg-blue-600/10 blur-[100px] rounded-full pointer-events-none"></div>
         <div class="max-w-7xl mx-auto relative z-10">
             <span class="font-mono text-xs text-white bg-blue-900/50 border border-blue-800/50 px-3 py-1 rounded-full mb-8 inline-block">
-                <i class="fa-solid fa-cloud mr-1"></i> Hello, I'm Max — I live in the Cloud and I'll improve yours
+                <i class="fa-solid fa-cloud mr-1"></i> Azure Cloud Architect & DevOps Engineer — Terraform, GitHub Actions, Enterprise IaC
             </span>
 
             <div id="status-badge-placeholder" class="font-mono text-blue-400 mb-8 text-sm flex flex-wrap gap-4">
@@ -11,23 +12,29 @@
                     <i class="fa-brands fa-microsoft"></i> Azure & Terraform Expert
                 </span>
                 <span class="bg-purple-900/20 border border-purple-900/50 text-purple-400 px-3 py-1 rounded flex items-center gap-2">
-                    <i class="fa-solid fa-code"></i> State-of-the-Art IaC
+                    <i class="fa-solid fa-layer-group"></i> Landing Zones & Governance
+                </span>
+                <span class="bg-green-900/20 border border-green-900/50 text-green-400 px-3 py-1 rounded flex items-center gap-2">
+                    <i class="fa-solid fa-server"></i> High Availability & DR
+                </span>
+                <span class="bg-cyan-900/20 border border-cyan-900/50 text-cyan-400 px-3 py-1 rounded flex items-center gap-2">
+                    <i class="fa-solid fa-dharmachakra"></i> Kubernetes / AKS
                 </span>
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
-                Enterprise-Grade <br> <span class="gradient-text">Cloud Infrastructure</span>
+                {{ if $isCS }}Senior Azure DevOps Konzultant <br> <span class="gradient-text">Enterprise Cloudová Architektura & Automatizace</span>{{ else }}Senior Azure DevOps Consultant <br> <span class="gradient-text">Enterprise Cloud Architecture & Automation</span>{{ end }}
             </h1>
             <p class="text-xl text-gray-400 max-w-2xl mb-6 leading-relaxed">
-                20+ years turning infrastructure chaos into <strong class="text-white">automated excellence</strong>. Azure, Terraform, and CI/CD pipelines are my playground. I work with industry-leading companies who demand <strong class="text-white">innovation</strong>—and that's what I love <strong class="text-white">delivering</strong>.
+                {{ if $isCS }}20+ let zkušeností s návrhem <strong class="text-white">enterprise cloudové architektury</strong> pro Fortune 500 klienty. Specializuji se na <strong class="text-white">Azure Landing Zones</strong>, Infrastructure as Code (<strong class="text-white">Terraform</strong>, <strong class="text-white">Bicep</strong>) a CI/CD automatizaci (<strong class="text-white">GitHub Actions</strong>, <strong class="text-white">Azure DevOps Pipelines</strong>). Od <strong class="text-white">high-availability</strong> multi-region nasazení po <strong class="text-white">Azure Governance</strong> a <strong class="text-white">DevSecOps</strong>—dodávám škálovatelná, bezpečná a auditovatelná řešení.{{ else }}20+ years designing <strong class="text-white">enterprise cloud architecture</strong> for Fortune 500 clients. I specialize in <strong class="text-white">Azure Landing Zones</strong>, Infrastructure as Code (<strong class="text-white">Terraform</strong>, <strong class="text-white">Bicep</strong>), and CI/CD automation (<strong class="text-white">GitHub Actions</strong>, <strong class="text-white">Azure DevOps Pipelines</strong>). From <strong class="text-white">high-availability</strong> multi-region setups to <strong class="text-white">Azure Governance</strong> and <strong class="text-white">DevSecOps</strong>—I deliver scalable, secure, and audit-ready solutions.{{ end }}
             </p>
 
             <div class="mb-10 p-4 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-lg max-w-3xl">
-                <h3 class="text-white font-bold mb-1 text-lg"><i class="fa-solid fa-shield-halved text-green-400 mr-2"></i> <strong>Risk-Free Assessment Guarantee</strong></h3>
+                <h3 class="text-white font-bold mb-1 text-lg"><i class="fa-solid fa-shield-halved text-green-400 mr-2"></i> <strong>{{ if $isCS }}Garance Azure Assessment bez rizika{{ else }}Risk-Free Azure Assessment Guarantee{{ end }}</strong></h3>
                 <p class="text-gray-400 text-base mb-2">
-                    If my initial 14-day architecture audit doesn't demonstrate clear ROI, <strong>you don't pay the invoice</strong>. No questions asked.
+                    {{ if $isCS }}Pokud můj 14denní Azure architektonický audit neprokáže jasné ROI, <strong>neplatíte fakturu</strong>. Bez otázek.{{ else }}If my initial 14-day Azure architecture audit doesn't demonstrate clear ROI, <strong>you don't pay the invoice</strong>. No questions asked.{{ end }}
                 </p>
                 <p class="text-gray-400 text-sm">
-                    <i class="fa-solid fa-shield-check text-blue-400 mr-1"></i> Professionally insured up to <strong class="text-white">€10M</strong> for liability coverage.
+                    <i class="fa-solid fa-shield-check text-blue-400 mr-1"></i> {{ if $isCS }}Profesionálně pojištěn do výše <strong class="text-white">€10M</strong> pro odpovědnost.{{ else }}Professionally insured up to <strong class="text-white">€10M</strong> for liability coverage.{{ end }}
                 </p>
             </div>
 
@@ -39,7 +46,8 @@
 
     <section class="py-10 border-y border-gray-800 bg-black/20">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center font-mono text-gray-600 text-xs uppercase tracking-[0.2em] mb-8">Trusted by Fortune 500</p>
+            <p class="text-center font-mono text-gray-600 text-xs uppercase tracking-[0.2em] mb-2">{{ if $isCS }}Důvěřují mi Fortune 500 — Enterprise & Veřejný sektor{{ else }}Trusted by Fortune 500 — Enterprise & Public Sector{{ end }}</p>
+            <p class="text-center text-gray-500 text-sm mb-8">Pharma • Finance • Logistics • {{ if $isCS }}Pojišťovnictví{{ else }}Insurance{{ end }} • Technology</p>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center items-center justify-center">
                 <div class="flex justify-center p-2">
                     <span class="text-gray-500 hover:text-white transition-colors duration-300">Novo Nordisk</span>
@@ -75,32 +83,83 @@
         </div>
     </section>
 
-    <section id="services" class="py-24 px-6 bg-[#0B0F19]">
+    <section id="expertise" class="py-24 px-6 bg-[#0B0F19]">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white mb-4">Engagement Models</h2>
-                <p class="text-gray-400">Flexible cooperation based on your needs.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">{{ if $isCS }}Klíčové Azure Expertízy{{ else }}Core Azure Expertise{{ end }}</h2>
+                <p class="text-gray-400">{{ if $isCS }}Enterprise specializace napříč Azure platformou.{{ else }}Enterprise-grade specializations across the Azure platform.{{ end }}</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-blue-500 transition">
+                    <i class="fa-solid fa-layer-group text-2xl text-blue-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Azure Landing Zones</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Enterprise-ready základ s governance, sítěmi a bezpečnostními standardy podle Microsoft CAF.{{ else }}Enterprise-ready foundation with governance, networking, and security baselines following Microsoft CAF.{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-purple-500 transition">
+                    <i class="fa-solid fa-shield-halved text-2xl text-purple-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Azure Governance</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Policy as Code, návrh RBAC, hierarchie Management Groups, Cost Management a vynucování compliance.{{ else }}Policy as Code, RBAC design, Management Groups hierarchy, Cost Management, and compliance enforcement.{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-green-500 transition">
+                    <i class="fa-solid fa-network-wired text-2xl text-green-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Azure Networking</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Hub-spoke topologie, Private Endpoints, ExpressRoute, Azure Firewall a VPN konektivita.{{ else }}Hub-spoke topology, Private Endpoints, ExpressRoute, Azure Firewall, and VPN connectivity.{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-red-500 transition">
+                    <i class="fa-solid fa-server text-2xl text-red-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">{{ if $isCS }}Vysoká dostupnost & DR{{ else }}High Availability & DR{{ end }}</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Multi-region nasazení, Traffic Manager, Azure Site Recovery a plánování disaster recovery.{{ else }}Multi-region deployments, Traffic Manager, Azure Site Recovery, and disaster recovery planning.{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-yellow-500 transition">
+                    <i class="fa-solid fa-lock text-2xl text-yellow-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">{{ if $isCS }}Azure Bezpečnost & Compliance{{ else }}Azure Security & Compliance{{ end }}</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Defender for Cloud, automatizace Key Vault, Security Center a regulatorní compliance (SOC2, ISO, GDPR).{{ else }}Defender for Cloud, Key Vault automation, Security Center, and regulatory compliance (SOC2, ISO, GDPR).{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-cyan-500 transition">
+                    <i class="fa-solid fa-dharmachakra text-2xl text-cyan-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Kubernetes / AKS</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Orchestrace kontejnerů, Helm charts, GitOps s Flux/ArgoCD a správa AKS clusterů.{{ else }}Container orchestration, Helm charts, GitOps with Flux/ArgoCD, and AKS cluster management.{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-orange-500 transition">
+                    <i class="fa-solid fa-rocket text-2xl text-orange-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">{{ if $isCS }}CI/CD Automatizace{{ else }}CI/CD Automation{{ end }}</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}GitHub Actions, Azure DevOps Pipelines, automatizované testování a orchestrace nasazení.{{ else }}GitHub Actions, Azure DevOps Pipelines, automated testing, and deployment orchestration.{{ end }}</p>
+                </div>
+                <div class="p-6 rounded-xl bg-[#111827] border border-gray-800 hover:border-teal-500 transition">
+                    <i class="fa-solid fa-code text-2xl text-teal-400 mb-3"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Infrastructure as Code</h3>
+                    <p class="text-gray-400 text-sm">{{ if $isCS }}Terraform, Bicep, modulární návrhové vzory, vzdálená správa stavu a detekce driftu.{{ else }}Terraform, Bicep, modular design patterns, remote state management, and drift detection.{{ end }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 bg-[#0f1623] border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">{{ if $isCS }}Modely spolupráce{{ else }}Engagement Models{{ end }}</h2>
+                <p class="text-gray-400">{{ if $isCS }}Flexibilní spolupráce podle vašich potřeb.{{ else }}Flexible cooperation based on your needs.{{ end }}</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 relative overflow-hidden">
-                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-user-tie text-blue-500 mr-2"></i> Full-Time Engagement</h3>
-                    <p class="text-gray-400 mb-4">Hire me as a dedicated member of your team. I integrate fully into your workflow, whether you need a Senior DevOps Engineer, Lead Architect, or technical mentor. Continuous hands-on collaboration tailored to your needs.</p>
-                    <span class="text-xs font-mono bg-blue-900/20 text-blue-400 px-2 py-1 rounded">MONTHLY RETAINER • LONG-TERM</span>
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-user-tie text-blue-500 mr-2"></i> {{ if $isCS }}Plný úvazek{{ else }}Full-Time Engagement{{ end }}</h3>
+                    <p class="text-gray-400 mb-4">{{ if $isCS }}Najměte mě jako dedikovaného Azure specialistu ve vašem týmu. Plně se integruji do vašeho workflow jako Senior Azure DevOps Engineer, Cloud Architect nebo technický mentor. Od implementace Landing Zones po vývoj CI/CD pipelines—kontinuální hands-on spolupráce.{{ else }}Hire me as a dedicated Azure specialist on your team. I integrate fully into your workflow as a Senior Azure DevOps Engineer, Cloud Architect, or technical mentor. From Landing Zone implementations to CI/CD pipeline development—continuous hands-on collaboration.{{ end }}</p>
+                    <span class="text-xs font-mono bg-blue-900/20 text-blue-400 px-2 py-1 rounded">{{ if $isCS }}MĚSÍČNÍ PAUŠÁL • DLOUHODOBĚ{{ else }}MONTHLY RETAINER • LONG-TERM{{ end }}</span>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 relative overflow-hidden">
-                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-bullseye text-purple-500 mr-2"></i> Project Delivery</h3>
-                    <p class="text-gray-400 mb-4">Complete end-to-end solution from A to Z. I handle architecture design, implementation, documentation, and knowledge transfer. Fixed scope, delivered turnkey.</p>
-                    <span class="text-xs font-mono bg-purple-900/20 text-purple-400 px-2 py-1 rounded">FIXED PRICE</span>
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-bullseye text-purple-500 mr-2"></i> {{ if $isCS }}Projektová dodávka{{ else }}Project Delivery{{ end }}</h3>
+                    <p class="text-gray-400 mb-4">{{ if $isCS }}Kompletní dodávka Azure infrastruktury od A do Z. Landing Zone setup, Terraform/Bicep moduly, CI/CD pipelines, governance politiky—vše s kompletní dokumentací a knowledge transferem. Fixní rozsah, dodáno na klíč.{{ else }}Complete Azure infrastructure delivery from A to Z. Landing Zone setup, Terraform/Bicep modules, CI/CD pipelines, governance policies—all with full documentation and knowledge transfer. Fixed scope, delivered turnkey.{{ end }}</p>
+                    <span class="text-xs font-mono bg-purple-900/20 text-purple-400 px-2 py-1 rounded">{{ if $isCS }}FIXNÍ CENA{{ else }}FIXED PRICE{{ end }}</span>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 relative overflow-hidden">
-                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-clipboard-check text-green-500 mr-2"></i> GAP Analysis</h3>
-                    <p class="text-gray-400 mb-4">Deep-dive review of your infrastructure, CI/CD pipelines, and governance. I identify critical weaknesses and deliver actionable roadmap to enhance security, scalability, and maintainability.</p>
-                    <span class="text-xs font-mono bg-green-900/20 text-green-400 px-2 py-1 rounded">14-DAY ENGAGEMENT</span>
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-clipboard-check text-green-500 mr-2"></i> GAP Analýza</h3>
+                    <p class="text-gray-400 mb-4">{{ if $isCS }}Hloubková revize vaší Azure infrastruktury, Landing Zone architektury, CI/CD pipelines a governance politik. Identifikuji bezpečnostní mezery, škálovatelnostní bottlenecky a compliance rizika—poté dodám akční plán nápravy.{{ else }}Deep-dive review of your Azure infrastructure, Landing Zone architecture, CI/CD pipelines, and governance policies. I identify security gaps, scalability bottlenecks, and compliance risks—then deliver an actionable remediation roadmap.{{ end }}</p>
+                    <span class="text-xs font-mono bg-green-900/20 text-green-400 px-2 py-1 rounded">{{ if $isCS }}14DENNÍ ENGAGEMENT{{ else }}14-DAY ENGAGEMENT{{ end }}</span>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#111827] border border-gray-800 relative overflow-hidden">
-                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-flask text-orange-500 mr-2"></i> PoC Design</h3>
-                    <p class="text-gray-400 mb-4">You need to implement something new but unsure how? I design a complete Proof of Concept including architecture plan, implementation guide, and best practices. Your team executes independently.</p>
-                    <span class="text-xs font-mono bg-orange-900/20 text-orange-400 px-2 py-1 rounded">ADVISORY + BLUEPRINT</span>
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-flask text-orange-500 mr-2"></i> {{ if $isCS }}Návrh PoC{{ else }}PoC Design{{ end }}</h3>
+                    <p class="text-gray-400 mb-4">{{ if $isCS }}Potřebujete vyhodnotit AKS, multi-region DR nebo novou Azure službu? Navrhnu kompletní Proof of Concept s architektonickými diagramy, Terraform/Bicep ukázkami kódu a implementačním průvodcem. Váš tým realizuje samostatně.{{ else }}Need to evaluate AKS, multi-region DR, or a new Azure service? I design a complete Proof of Concept with architecture diagrams, Terraform/Bicep code samples, and implementation guide. Your team executes independently.{{ end }}</p>
+                    <span class="text-xs font-mono bg-orange-900/20 text-orange-400 px-2 py-1 rounded">{{ if $isCS }}KONZULTACE + BLUEPRINT{{ else }}ADVISORY + BLUEPRINT{{ end }}</span>
                 </div>
             </div>
         </div>
@@ -108,52 +167,52 @@
 
     <section id="training" class="py-24 px-6 bg-[#0f1623] border-y border-gray-800">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-4 text-center"><i class="fa-solid fa-chalkboard-teacher text-green-400 mr-2"></i> Custom DevOps Training</h2>
+            <h2 class="text-3xl font-bold text-white mb-4 text-center"><i class="fa-solid fa-chalkboard-teacher text-green-400 mr-2"></i> {{ if $isCS }}Azure DevOps & Infrastrukturní Školení{{ else }}Azure DevOps & Infrastructure Training{{ end }}</h2>
             <p class="text-xl text-gray-400 text-center mb-12">
-                Accelerate your team's maturity with hands-on workshops tailored to your existing architecture (Azure, Terraform, GitOps). My goal is to create genuine <strong class="text-green-400">"AHA!"</strong> moments — when everything clicks.
+                {{ if $isCS }}Zrychlete cloudovou vyspělost vašeho týmu pomocí praktických workshopů zaměřených na Azure Landing Zones, Terraform moduly, GitHub Actions CI/CD a Azure Governance. Mým cílem je vytvořit skutečné <strong class="text-green-400">"AHA!"</strong> momenty — kdy všechno zapadne.{{ else }}Accelerate your team's cloud maturity with hands-on workshops covering Azure Landing Zones, Terraform modules, GitHub Actions CI/CD, and Azure Governance. My goal is to create genuine <strong class="text-green-400">"AHA!"</strong> moments — when everything clicks.{{ end }}
             </p>
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-6 rounded-xl bg-[#111827] border border-green-800/50">
-                    <h3 class="font-bold text-white mb-2"><i class="fa-solid fa-code mr-2 text-green-400"></i> Code-Centric Best Practices</h3>
+                    <h3 class="font-bold text-white mb-2"><i class="fa-solid fa-code mr-2 text-green-400"></i> {{ if $isCS }}Kódově orientované best practices{{ else }}Code-Centric Best Practices{{ end }}</h3>
                     <p class="text-gray-400 text-sm">
-                        Focus on <strong>modular Terraform design</strong>, advanced CI/CD patterns (GitHub Actions), and GitOps principles directly applicable to your repository standards.
+                        {{ if $isCS }}Zaměření na <strong>modulární Terraform design</strong>, pokročilé CI/CD vzory (GitHub Actions) a GitOps principy přímo aplikovatelné na vaše repository standardy.{{ else }}Focus on <strong>modular Terraform design</strong>, advanced CI/CD patterns (GitHub Actions), and GitOps principles directly applicable to your repository standards.{{ end }}
                     </p>
                 </div>
                 <div class="p-6 rounded-xl bg-[#111827] border border-green-800/50">
-                    <h3 class="font-bold text-white mb-2"><i class="fa-solid fa-puzzle-piece mr-2 text-green-400"></i> Contextual Workshops</h3>
+                    <h3 class="font-bold text-white mb-2"><i class="fa-solid fa-puzzle-piece mr-2 text-green-400"></i> {{ if $isCS }}Kontextové workshopy{{ else }}Contextual Workshops{{ end }}</h3>
                     <p class="text-gray-400 text-sm">
-                        Training based on <strong>your specific Azure environment</strong> and challenges, not generic examples. Ensures maximum relevance and immediate adoption by the team.
+                        {{ if $isCS }}Školení založené na <strong>vašem konkrétním Azure prostředí</strong> a výzvách, ne na generických příkladech. Zajišťuje maximální relevanci a okamžité osvojení týmem.{{ else }}Training based on <strong>your specific Azure environment</strong> and challenges, not generic examples. Ensures maximum relevance and immediate adoption by the team.{{ end }}
                     </p>
                 </div>
             </div>
 
             <div class="mt-8 p-6 rounded-xl bg-gradient-to-r from-green-900/20 to-emerald-900/20 border border-green-500/30">
-                <h3 class="font-bold text-white mb-3 text-lg"><i class="fa-solid fa-lightbulb mr-2 text-yellow-400"></i> The "AHA!" Moment Philosophy</h3>
+                <h3 class="font-bold text-white mb-3 text-lg"><i class="fa-solid fa-lightbulb mr-2 text-yellow-400"></i> {{ if $isCS }}Filozofie "AHA!" momentu{{ else }}The "AHA!" Moment Philosophy{{ end }}</h3>
                 <p class="text-gray-300 mb-4">
-                    I don't just teach <em>how</em> to write Terraform modules or configure pipelines. I focus on the <strong class="text-green-400">"why"</strong> — the moment when a trainee truly understands the reasoning behind a pattern or practice.
+                    {{ if $isCS }}Neučím jen <em>jak</em> psát Terraform moduly nebo konfigurovat pipelines. Soustředím se na <strong class="text-green-400">"proč"</strong> — ten moment, kdy školený skutečně pochopí důvod za daným vzorem nebo praktikou.{{ else }}I don't just teach <em>how</em> to write Terraform modules or configure pipelines. I focus on the <strong class="text-green-400">"why"</strong> — the moment when a trainee truly understands the reasoning behind a pattern or practice.{{ end }}
                 </p>
                 <p class="text-gray-400 text-sm">
-                    Real understanding comes when someone can independently decide <em>"this is the right approach for this situation"</em> — not because they memorized a template, but because they grasp the underlying principles. That's when learning becomes permanent and transferable. My workshops are designed to trigger these breakthrough moments through real-world scenarios, guided discovery, and connecting abstract concepts to tangible business outcomes.
+                    {{ if $isCS }}Skutečné porozumění přichází, když se někdo dokáže samostatně rozhodnout <em>"tohle je správný přístup pro tuto situaci"</em> — ne proto, že si zapamatoval šablonu, ale protože chápe základní principy. To je moment, kdy se učení stává trvalým a přenositelným. Mé workshopy jsou navrženy tak, aby vyvolávaly tyto průlomové momenty prostřednictvím reálných scénářů, řízeného objevování a propojování abstraktních konceptů s hmatelnými obchodními výsledky.{{ else }}Real understanding comes when someone can independently decide <em>"this is the right approach for this situation"</em> — not because they memorized a template, but because they grasp the underlying principles. That's when learning becomes permanent and transferable. My workshops are designed to trigger these breakthrough moments through real-world scenarios, guided discovery, and connecting abstract concepts to tangible business outcomes.{{ end }}
                 </p>
             </div>
 
             <div class="text-center mt-12">
-                 <a href="mailto:info@maxinthecloud.com?subject=Inquiry:Custom DevOps Training" class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded transition inline-block">Request a Custom Training</a>
+                 <a href="mailto:info@maxinthecloud.com?subject=Inquiry:Custom DevOps Training" class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded transition inline-block">{{ if $isCS }}Objednat školení na míru{{ else }}Request a Custom Training{{ end }}</a>
             </div>
         </div>
     </section>
 
     <section id="testimonials" class="py-24 px-6 bg-[#0B0F19]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-12 text-center">What Clients Say</h2>
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">{{ if $isCS }}Co říkají Azure klienti{{ else }}What Azure Clients Say{{ end }}</h2>
 
             <div class="grid md:grid-cols-2 gap-8">
 
                 <div class="p-8 rounded-xl bg-[#111827] border border-gray-800">
                     <i class="fa-solid fa-quote-left text-3xl text-gray-600 mb-4"></i>
                     <blockquote class="text-gray-300 italic text-lg mb-6 leading-relaxed">
-                        "He transformed our chaotic infrastructure into a predictable, MLOps-ready platform. The 14-day audit alone justified the entire investment. His strategic guidance is unmatched."
+                        "He transformed our chaotic Azure infrastructure into a predictable, MLOps-ready platform. The 14-day architecture audit alone justified the entire investment. His strategic guidance on Landing Zones and governance is unmatched."
                     </blockquote>
                     <p class="font-bold text-white">J. Kovář</p>
                     <p class="text-sm text-blue-400">CTO, Leading E-commerce Company</p>
@@ -162,7 +221,7 @@
                 <div class="p-8 rounded-xl bg-[#111827] border border-gray-800">
                     <i class="fa-solid fa-quote-left text-3xl text-gray-600 mb-4"></i>
                     <blockquote class="text-gray-300 italic text-lg mb-6 leading-relaxed">
-                        "His Terraform standards became the foundation for our entire engineering team. He's not just an architect; he's a highly organized force multiplier who instantly became a predictable member of our Scrum team."
+                        "His Terraform and Azure DevOps standards became the foundation for our entire engineering team. He's not just an architect; he's a highly organized force multiplier who instantly became a predictable member of our Scrum team. Our CI/CD pipelines are now fully automated and self-service."
                     </blockquote>
                     <p class="font-bold text-white">M. Richter</p>
                     <p class="text-sm text-purple-400">Senior DevOps Manager, Global Finance</p>
@@ -174,42 +233,42 @@
 
     <section class="py-24 px-6 bg-[#111827] border-t border-gray-800">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-4 text-center">My Core Engineering Principles</h2>
+            <h2 class="text-3xl font-bold text-white mb-4 text-center">{{ if $isCS }}Azure DevOps Inženýrské Standardy{{ else }}Azure DevOps Engineering Standards{{ end }}</h2>
             <p class="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-12">
-                I deliver <strong>State of the Art</strong> code designed for long-term auditability, maintainability, and team independence.
+                {{ if $isCS }}Enterprise dodávka: <strong>škálovatelná</strong>, <strong>bezpečná</strong> a plně dokumentovaná řešení navržená pro dlouhodobou udržovatelnost a nezávislost týmu.{{ else }}Enterprise-grade delivery: <strong>scalable</strong>, <strong>secure</strong>, and fully documented solutions designed for long-term maintainability and team independence.{{ end }}
             </p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
                 <div class="p-6 rounded-xl border border-purple-500/50 bg-purple-900/10">
                     <i class="fa-solid fa-robot text-2xl text-purple-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white mb-1">State-of-the-Art Code & MLOps</h3>
+                    <h3 class="text-lg font-bold text-white mb-1">{{ if $isCS }}Špičkový kód & MLOps{{ else }}State-of-the-Art Code & MLOps{{ end }}</h3>
                     <p class="text-gray-400 text-sm">
-                        Strict modularity, readability, and clean code principles. I design IaC ready to handle complex <strong>AI/ML</strong> training and serving pipelines (MLOps).
+                        {{ if $isCS }}Striktní modularita, čitelnost a principy clean code. Navrhuji IaC připravenou pro komplexní <strong>AI/ML</strong> tréninkové a produkční pipelines (MLOps).{{ else }}Strict modularity, readability, and clean code principles. I design IaC ready to handle complex <strong>AI/ML</strong> training and serving pipelines (MLOps).{{ end }}
                     </p>
                 </div>
 
                 <div class="p-6 rounded-xl border border-green-500/50 bg-green-900/10">
                     <i class="fa-solid fa-book-open-reader text-2xl text-green-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white mb-1">Versioned Documentation</h3>
+                    <h3 class="text-lg font-bold text-white mb-1">{{ if $isCS }}Verzovaná dokumentace{{ else }}Versioned Documentation{{ end }}</h3>
                     <p class="text-gray-400 text-sm">
-                        I deliver complete <strong>Runbooks</strong> and architectural diagrams (<strong>C4 Model</strong>) alongside the code, guaranteeing zero vendor lock-in and immediate team takeover.
+                        {{ if $isCS }}Dodávám kompletní <strong>Runbooky</strong> a architektonické diagramy (<strong>C4 Model</strong>) spolu s kódem, garantující nulový vendor lock-in a okamžité převzetí týmem.{{ else }}I deliver complete <strong>Runbooks</strong> and architectural diagrams (<strong>C4 Model</strong>) alongside the code, guaranteeing zero vendor lock-in and immediate team takeover.{{ end }}
                     </p>
                 </div>
 
                 <div class="p-6 rounded-xl border border-red-500/50 bg-red-900/10">
                     <i class="fa-solid fa-lock text-2xl text-red-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white mb-1">Mandatory Security</h3>
+                    <h3 class="text-lg font-bold text-white mb-1">{{ if $isCS }}Povinná bezpečnost{{ else }}Mandatory Security{{ end }}</h3>
                     <p class="text-gray-400 text-sm">
-                        Security is automated and enforced via <strong>IaC Scans</strong> and <strong>Azure Policy</strong>. Every Pull Request must pass checks before deployment (<strong>Security Shift Left</strong>).
+                        {{ if $isCS }}Bezpečnost je automatizovaná a vynucovaná přes <strong>IaC Scans</strong> a <strong>Azure Policy</strong>. Každý Pull Request musí projít kontrolami před nasazením (<strong>Security Shift Left</strong>).{{ else }}Security is automated and enforced via <strong>IaC Scans</strong> and <strong>Azure Policy</strong>. Every Pull Request must pass checks before deployment (<strong>Security Shift Left</strong>).{{ end }}
                     </p>
                 </div>
 
                 <div class="p-6 rounded-xl border border-blue-500/50 bg-blue-900/10">
                     <i class="fa-solid fa-sitemap text-2xl text-blue-400 mb-3"></i>
-                    <h3 class="text-lg font-bold text-white mb-1">Leadership & Process Rigor</h3>
+                    <h3 class="text-lg font-bold text-white mb-1">{{ if $isCS }}Leadership & procesní disciplína{{ else }}Leadership & Process Rigor{{ end }}</h3>
                     <p class="text-gray-400 text-sm">
-                        I drive team maturity through mentoring, and integrate seamlessly into <strong>Agile/Scrum workflows</strong>, ensuring structured delivery and <strong>predictable project velocity</strong>.
+                        {{ if $isCS }}Rozvíjím vyspělost týmu prostřednictvím mentoringu a bezproblémově se integruji do <strong>Agile/Scrum workflows</strong>, zajišťující strukturované dodávky a <strong>předvídatelnou rychlost projektu</strong>.{{ else }}I drive team maturity through mentoring, and integrate seamlessly into <strong>Agile/Scrum workflows</strong>, ensuring structured delivery and <strong>predictable project velocity</strong>.{{ end }}
                     </p>
                 </div>
 
@@ -219,12 +278,12 @@
                 <div class="flex items-start gap-4">
                     <i class="fa-solid fa-microchip text-3xl text-cyan-400 mt-1"></i>
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-2">AI-Augmented Engineering with Local LLM</h3>
+                        <h3 class="text-lg font-bold text-white mb-2">{{ if $isCS }}AI-augmentované inženýrství s lokálním LLM{{ else }}AI-Augmented Engineering with Local LLM{{ end }}</h3>
                         <p class="text-gray-300 mb-2">
-                            I stay ahead of the curve by leveraging a <strong class="text-cyan-400">self-hosted, fine-tuned LLM</strong> running entirely on my local infrastructure. This AI assistant accelerates my workflow — from code generation to documentation — while ensuring <strong>zero data leakage</strong>.
+                            {{ if $isCS }}Držím krok s dobou pomocí <strong class="text-cyan-400">self-hosted, fine-tuned LLM</strong> běžícího kompletně na mé lokální infrastruktuře. Tento AI asistent zrychluje můj workflow — od generování kódu po dokumentaci — při zajištění <strong>nulového úniku dat</strong>.{{ else }}I stay ahead of the curve by leveraging a <strong class="text-cyan-400">self-hosted, fine-tuned LLM</strong> running entirely on my local infrastructure. This AI assistant accelerates my workflow — from code generation to documentation — while ensuring <strong>zero data leakage</strong>.{{ end }}
                         </p>
                         <p class="text-gray-400 text-sm">
-                            Your proprietary code, architecture details, and business logic never leave my secure environment. This approach combines cutting-edge AI productivity with enterprise-grade confidentiality — no cloud AI APIs, no third-party data exposure.
+                            {{ if $isCS }}Váš proprietární kód, architektonické detaily a business logika nikdy neopustí mé zabezpečené prostředí. Tento přístup kombinuje špičkovou AI produktivitu s enterprise-grade důvěrností — žádná cloud AI API, žádné vystavení dat třetím stranám.{{ else }}Your proprietary code, architecture details, and business logic never leave my secure environment. This approach combines cutting-edge AI productivity with enterprise-grade confidentiality — no cloud AI APIs, no third-party data exposure.{{ end }}
                         </p>
                     </div>
                 </div>
@@ -234,9 +293,9 @@
 
     <section id="case-studies" class="py-24 px-6 bg-[#0B0F19]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">Engineering Case Studies</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">{{ if $isCS }}Azure Inženýrské Případové Studie{{ else }}Azure Engineering Case Studies{{ end }}</h2>
             <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-                Real-world solutions from enterprise environments—<strong class="text-white">1,000+ repositories</strong>, <strong class="text-white">Fortune 500 clients</strong>, and complex multi-tenant Azure architectures.
+                {{ if $isCS }}Enterprise řešení: <strong class="text-white">Azure Landing Zones</strong>, <strong class="text-white">multi-region nasazení</strong> a <strong class="text-white">DevOps transformace</strong> pro Fortune 500 klienty z financí, farmacie a logistiky.{{ else }}Enterprise-scale solutions: <strong class="text-white">Azure Landing Zones</strong>, <strong class="text-white">multi-region deployments</strong>, and <strong class="text-white">DevOps transformations</strong> for Fortune 500 clients across finance, pharma, and logistics.{{ end }}
             </p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -248,7 +307,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">FinOps</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Azure</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Python</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Developing a proprietary cost-analysis tool that outperformed Azure Advisor and saved 25% of cloud spend.</p>
-                    <span class="text-yellow-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-yellow-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/github-security-governance-automation/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-blue-500 transition group block">
@@ -258,7 +317,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">GitHub</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">TypeScript</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Security</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Automating security policies across 500+ repositories ensuring 100% compliance without manual intervention.</p>
-                    <span class="text-blue-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-blue-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/jenkins-to-github-actions-cicd-migration/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-purple-500 transition group block">
@@ -268,7 +327,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">GitHub Actions</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Jenkins</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Terraform</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Migrating complex pipelines from Jenkins/ADO to GitHub Actions with zero downtime and full Terraform adoption.</p>
-                    <span class="text-purple-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-purple-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/terraform-environment-variables-automation/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-green-500 transition group block">
@@ -278,7 +337,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">GitHub Variables</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Azure DevOps</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Terraform</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Eliminated manual variable management chaos in GitHub/ADO by automating environment configuration with full auditability and naming standards.</p>
-                    <span class="text-green-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-green-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/github-actions-reusable-workflows-devops/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-orange-500 transition group block">
@@ -288,7 +347,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">GitHub Actions</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">CI/CD</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">DevEx</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Built a library of modular, versioned GitHub Actions enabling developers to build complete CI/CD pipelines without DevOps bottlenecks.</p>
-                    <span class="text-orange-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-orange-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/servicenow-github-actions-itsm-automation/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group block">
@@ -298,7 +357,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">ServiceNow API</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">GitHub Actions</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">ITSM</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Integrated ServiceNow FastRFC workflow into GitHub Actions for automated, traceable deployments without manual intervention.</p>
-                    <span class="text-cyan-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-cyan-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/azure-keyvault-secret-rotation-security/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-red-500 transition group block">
@@ -308,7 +367,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Key Vault</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Service Principals</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Security</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Automated lifecycle management for Service Principal secrets and Storage Account keys with expiration monitoring and auto-rotation to Key Vault.</p>
-                    <span class="text-red-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-red-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/azure-integration-platform-terraform-bicep/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-teal-500 transition group block">
@@ -318,7 +377,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Service Bus</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Logic Apps</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Terraform+Bicep</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Architected IaC-based integration platform using Azure Service Bus, Logic Apps, APIM, and SharePoint with Terraform + Bicep deployment.</p>
-                    <span class="text-teal-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-teal-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
                 <a href="{{ site.BaseURL }}case-study/azure-vm-powershell-automation-framework/" class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-indigo-500 transition group block">
@@ -328,7 +387,7 @@
                     </div>
                     <div class="flex flex-wrap gap-1 mb-3"><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">PowerShell</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Azure VMs</span><span class="text-[10px] font-mono bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Automation</span></div>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Developed sophisticated PowerShell modules for automated post-deployment configuration of Azure VMs with centralized management and version control.</p>
-                    <span class="text-indigo-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="text-indigo-500 text-sm font-bold flex items-center gap-2">{{ if $isCS }}Číst případovou studii{{ else }}Read Case Study{{ end }} <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
 
             </div>
@@ -338,7 +397,7 @@
     <section class="py-20 px-6 bg-[#0f1623] border-t border-gray-800">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
             <div>
-                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">Certifications & Expertise</h3>
+                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">{{ if $isCS }}Azure certifikace & technická expertíza{{ else }}Azure Certifications & Technical Expertise{{ end }}</h3>
                 <div class="space-y-4">
                     <div class="flex items-center gap-4 text-white font-bold"><i class="fa-brands fa-microsoft text-blue-500 text-xl"></i> Azure Solutions Architect Expert</div>
                     <div class="flex items-center gap-4 text-white font-bold"><i class="fa-brands fa-microsoft text-blue-500 text-xl"></i> DevOps Engineer Expert</div>
@@ -348,7 +407,7 @@
             </div>
 
             <div>
-                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">Key Tooling & Secondary Stack</h3>
+                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">{{ if $isCS }}Klíčové nástroje & sekundární stack{{ else }}Key Tooling & Secondary Stack{{ end }}</h3>
                 <div class="grid grid-cols-3 gap-6">
                     <div class="text-center">
                         <i class="fa-brands fa-docker text-4xl text-blue-400"></i>
@@ -378,34 +437,34 @@
             </div>
 
             <div class="mt-12 pt-8 border-t border-gray-700">
-                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6 text-center">Languages</h3>
+                <h3 class="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6 text-center">{{ if $isCS }}Jazyky{{ else }}Languages{{ end }}</h3>
                 <div class="flex flex-wrap justify-center gap-6">
                     <div class="flex items-center gap-3 bg-gray-800/30 px-4 py-2 rounded-lg border border-gray-700">
                         <span class="fi fi-gb text-3xl" style="font-size: 2rem;"></span>
                         <div>
-                            <p class="text-white font-bold text-sm">English</p>
-                            <p class="text-xs text-gray-500">Fluent</p>
+                            <p class="text-white font-bold text-sm">{{ if $isCS }}Angličtina{{ else }}English{{ end }}</p>
+                            <p class="text-xs text-gray-500">{{ if $isCS }}Plynule{{ else }}Fluent{{ end }}</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3 bg-gray-800/30 px-4 py-2 rounded-lg border border-gray-700">
                         <span class="fi fi-cz text-3xl" style="font-size: 2rem;"></span>
                         <div>
-                            <p class="text-white font-bold text-sm">Czech</p>
-                            <p class="text-xs text-gray-500">Native</p>
+                            <p class="text-white font-bold text-sm">{{ if $isCS }}Čeština{{ else }}Czech{{ end }}</p>
+                            <p class="text-xs text-gray-500">{{ if $isCS }}Rodilý mluvčí{{ else }}Native{{ end }}</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3 bg-gray-800/30 px-4 py-2 rounded-lg border border-gray-700">
                         <span class="fi fi-ru text-3xl" style="font-size: 2rem;"></span>
                         <div>
-                            <p class="text-white font-bold text-sm">Russian</p>
-                            <p class="text-xs text-gray-500">Fluent</p>
+                            <p class="text-white font-bold text-sm">{{ if $isCS }}Ruština{{ else }}Russian{{ end }}</p>
+                            <p class="text-xs text-gray-500">{{ if $isCS }}Plynule{{ else }}Fluent{{ end }}</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3 bg-gray-800/30 px-4 py-2 rounded-lg border border-gray-700">
                         <span class="fi fi-de text-3xl" style="font-size: 2rem;"></span>
                         <div>
-                            <p class="text-white font-bold text-sm">German</p>
-                            <p class="text-xs text-gray-500">Intermediate</p>
+                            <p class="text-white font-bold text-sm">{{ if $isCS }}Němčina{{ else }}German{{ end }}</p>
+                            <p class="text-xs text-gray-500">{{ if $isCS }}Středně pokročilý{{ else }}Intermediate{{ end }}</p>
                         </div>
                     </div>
                 </div>
@@ -417,61 +476,58 @@
         <div class="max-w-6xl mx-auto p-8 rounded-xl border border-gray-700 bg-[#111827] shadow-xl">
             <div class="flex items-center gap-4 mb-6">
                 <i class="fa-solid fa-briefcase text-3xl text-red-500"></i>
-                <h2 class="text-3xl font-extrabold text-white">Recruiter & Agency Notice</h2>
+                <h2 class="text-3xl font-extrabold text-white">{{ if $isCS }}Informace pro recruitery a agentury — Azure DevOps Konzultant{{ else }}Recruiter & Agency Notice — Azure DevOps Consultant{{ end }}</h2>
             </div>
 
             <p class="text-lg text-gray-400 mb-8">
-                Thank you for reviewing my profile. To ensure efficiency, please note my professional requirements.
+                {{ if $isCS }}Děkuji za prohlédnutí mého profilu. Pro zajištění efektivity si prosím všimněte mých profesních požadavků.{{ else }}Thank you for reviewing my profile. To ensure efficiency, please note my professional requirements.{{ end }}
             </p>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-sm">
 
                 <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
-                    <h3 class="font-bold text-red-400 mb-1"><i class="fa-solid fa-file-contract mr-2"></i> Engagement & Status</h3>
-                    <p class="text-white">Strictly <strong>B2B Contract / Freelance</strong>.</p>
-                    <p class="text-xs text-gray-500 mt-1">Operating through my own company established in <strong>2005</strong>, guaranteeing long-term stability and compliance.</p>
+                    <h3 class="font-bold text-red-400 mb-1"><i class="fa-solid fa-file-contract mr-2"></i> {{ if $isCS }}Spolupráce & Status{{ else }}Engagement & Status{{ end }}</h3>
+                    <p class="text-white">{{ if $isCS }}Výhradně <strong>B2B kontrakt / Freelance</strong>.{{ else }}Strictly <strong>B2B Contract / Freelance</strong>.{{ end }}</p>
+                    <p class="text-xs text-gray-500 mt-1">{{ if $isCS }}Působím přes vlastní společnost založenou v roce <strong>2005</strong>, garantující dlouhodobou stabilitu a compliance.{{ else }}Operating through my own company established in <strong>2005</strong>, guaranteeing long-term stability and compliance.{{ end }}</p>
                 </div>
 
                 <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
-                    <h3 class="font-bold text-blue-400 mb-1"><i class="fa-solid fa-code-branch mr-2"></i> Tech & Seniority Focus</h3>
-                    <p class="text-white">Minimum 5+ years experience required in <strong>Azure & Terraform</strong> IaC.</p>
-                    <p class="text-xs text-gray-500 mt-1">Please only submit high-value roles matching this specific stack. Not considering permanent (FTE) roles.</p>
+                    <h3 class="font-bold text-blue-400 mb-1"><i class="fa-solid fa-code-branch mr-2"></i> {{ if $isCS }}Tech & seniorita{{ else }}Tech & Seniority Focus{{ end }}</h3>
+                    <p class="text-white">{{ if $isCS }}Požadovány minimálně 5+ let zkušeností v <strong>Azure & Terraform</strong> IaC.{{ else }}Minimum 5+ years experience required in <strong>Azure & Terraform</strong> IaC.{{ end }}</p>
+                    <p class="text-xs text-gray-500 mt-1">{{ if $isCS }}Prosím zasílejte pouze vysoce hodnotné role odpovídající tomuto specifickému stacku. Neuvažuji o permanentních (HPP) pozicích.{{ else }}Please only submit high-value roles matching this specific stack. Not considering permanent (FTE) roles.{{ end }}</p>
                 </div>
 
                 <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
-                    <h3 class="font-bold text-yellow-400 mb-1"><i class="fa-solid fa-location-dot mr-2"></i> Location & Travel</h3>
-                    <p class="text-white">Primarily remote engagement (EU timezones).</p>
-                    <p class="text-xs text-gray-500 mt-1">Willing to travel for high-impact on-site meetings (kick-offs, workshops) with teams across <strong>Europe and the USA</strong>.</p>
+                    <h3 class="font-bold text-yellow-400 mb-1"><i class="fa-solid fa-location-dot mr-2"></i> {{ if $isCS }}Lokalita & cestování{{ else }}Location & Travel{{ end }}</h3>
+                    <p class="text-white">{{ if $isCS }}Primárně vzdálená spolupráce (EU časové zóny).{{ else }}Primarily remote engagement (EU timezones).{{ end }}</p>
+                    <p class="text-xs text-gray-500 mt-1">{{ if $isCS }}Ochoten cestovat na high-impact osobní schůzky (kick-offy, workshopy) s týmy napříč <strong>Evropou a USA</strong>.{{ else }}Willing to travel for high-impact on-site meetings (kick-offs, workshops) with teams across <strong>Europe and the USA</strong>.{{ end }}</p>
                 </div>
 
                 <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
-                    <h3 class="font-bold text-green-400 mb-1"><i class="fa-solid fa-envelope mr-2"></i> Contact Preference</h3>
-                    <p class="text-white">Please reach out via <strong>email, WhatsApp, or LinkedIn message</strong>.</p>
-                    <p class="text-xs text-gray-500 mt-1">Written messages allow me to respond thoughtfully without interrupting deep technical work or client commitments.</p>
+                    <h3 class="font-bold text-green-400 mb-1"><i class="fa-solid fa-envelope mr-2"></i> {{ if $isCS }}Preferovaný kontakt{{ else }}Contact Preference{{ end }}</h3>
+                    <p class="text-white">{{ if $isCS }}Kontaktujte mě prosím přes <strong>email, WhatsApp nebo LinkedIn zprávu</strong>.{{ else }}Please reach out via <strong>email, WhatsApp, or LinkedIn message</strong>.{{ end }}</p>
+                    <p class="text-xs text-gray-500 mt-1">{{ if $isCS }}Písemné zprávy mi umožňují odpovídat uvážlivě bez přerušení hluboké technické práce nebo klientských závazků.{{ else }}Written messages allow me to respond thoughtfully without interrupting deep technical work or client commitments.{{ end }}</p>
                 </div>
 
                 <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
-                    <h3 class="font-bold text-purple-400 mb-1"><i class="fa-solid fa-laptop mr-2"></i> Equipment Flexibility</h3>
-                    <p class="text-white">Happy to use <strong>corporate-managed devices</strong>.</p>
-                    <p class="text-xs text-gray-500 mt-1">While I have my own secure workstation, I fully comply with corporate security policies and can work on company-provided laptops with enterprise MDM.</p>
+                    <h3 class="font-bold text-purple-400 mb-1"><i class="fa-solid fa-laptop mr-2"></i> {{ if $isCS }}Flexibilita vybavení{{ else }}Equipment Flexibility{{ end }}</h3>
+                    <p class="text-white">{{ if $isCS }}Rád využiji <strong>firemní spravovaná zařízení</strong>.{{ else }}Happy to use <strong>corporate-managed devices</strong>.{{ end }}</p>
+                    <p class="text-xs text-gray-500 mt-1">{{ if $isCS }}Ačkoli mám vlastní zabezpečenou pracovní stanici, plně dodržuji firemní bezpečnostní politiky a mohu pracovat na firemních noteboocích s enterprise MDM.{{ else }}While I have my own secure workstation, I fully comply with corporate security policies and can work on company-provided laptops with enterprise MDM.{{ end }}</p>
+                </div>
+
+                <div class="p-4 bg-gray-800/50 rounded border border-gray-700">
+                    <h3 class="font-bold text-cyan-400 mb-1"><i class="fa-solid fa-file-signature mr-2"></i> {{ if $isCS }}Plné vlastnictví IP{{ else }}Full IP Ownership{{ end }}</h3>
+                    <p class="text-white">{{ if $isCS }}Všechny výstupy se stávají <strong>100% vaším vlastnictvím</strong>.{{ else }}All deliverables become <strong>100% your property</strong>.{{ end }}</p>
+                    <p class="text-xs text-gray-500 mt-1">{{ if $isCS }}Kód, dokumentace a veškerá práce vytvořená během spolupráce—včetně licencí a práv. Explicitně definováno ve smlouvě. Žádné háčky.{{ else }}Code, documentation, and all work created during engagement—including licenses and rights. Explicitly defined in contract. No strings attached.{{ end }}</p>
                 </div>
             </div>
 
             <div class="mt-8 p-4 bg-yellow-900/20 rounded border border-yellow-800/50">
                 <p class="text-yellow-400 font-bold text-sm">
-                    <i class="fa-solid fa-triangle-exclamation mr-2"></i> Response Priority:
+                    <i class="fa-solid fa-triangle-exclamation mr-2"></i> {{ if $isCS }}Priorita odpovědi:{{ else }}Response Priority:{{ end }}
                 </p>
                 <p class="text-yellow-200 text-sm mt-1">
-                    To respect both our time: messages that include a <strong>budget range</strong> receive a guaranteed response within <strong>24 hours</strong>. Without budget context, I may not be able to prioritize a reply—this helps us both avoid mismatched expectations early.
-                </p>
-            </div>
-
-            <div class="mt-6 p-4 bg-blue-900/20 rounded border border-blue-800/50">
-                <p class="text-blue-400 font-bold text-sm">
-                    <i class="fa-solid fa-file-signature mr-2"></i> Full IP Ownership:
-                </p>
-                <p class="text-blue-200 text-sm mt-1">
-                    All code, documentation, and deliverables created during our engagement become <strong>100% your property</strong>—including all licenses and rights. This is explicitly defined in the contract. No strings attached.
+                    {{ if $isCS }}Pro respektování našeho společného času: zprávy obsahující <strong>rozpočtový rozsah</strong> obdrží garantovanou odpověď do <strong>24 hodin</strong>. Bez kontextu rozpočtu možná nebudu moci prioritizovat odpověď—toto nám oběma pomáhá vyhnout se nesouladu očekávání hned na začátku.{{ else }}To respect both our time: messages that include a <strong>budget range</strong> receive a guaranteed response within <strong>24 hours</strong>. Without budget context, I may not be able to prioritize a reply—this helps us both avoid mismatched expectations early.{{ end }}
                 </p>
             </div>
         </div>

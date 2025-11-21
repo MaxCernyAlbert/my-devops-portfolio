@@ -1,9 +1,9 @@
 ---
-title: "Azure Integration Platform - Terraform and Bicep IaC Architecture"
+title: "Azure Integration Platform - Enterprise Terraform & Bicep Architecture"
 date: 2025-01-03
-description: "Azure architecture case study: Enterprise integration platform using Service Bus, Logic Apps, API Management, and SharePoint, fully deployed via Terraform + Bicep with GitOps workflow."
-tags: ["Azure Service Bus", "Logic Apps", "APIM", "SharePoint", "Terraform", "Bicep", "Azure Architecture"]
-keywords: ["azure integration platform", "terraform bicep", "azure service bus", "logic apps automation", "api management", "azure architect", "infrastructure as code"]
+description: "Enterprise Azure architecture case study: Integration platform using Service Bus, Logic Apps, API Management deployed via Terraform + Bicep IaC. Full GitOps workflow with Azure Landing Zone patterns."
+tags: ["Azure Service Bus", "Logic Apps", "APIM", "Terraform", "Bicep", "Azure Landing Zone"]
+keywords: ["azure integration platform", "terraform bicep azure", "azure service bus", "azure landing zone", "enterprise cloud architecture", "azure architect", "infrastructure as code"]
 ---
 
 ### The Challenge

@@ -1,9 +1,9 @@
 ---
-title: "Azure VM PowerShell Automation Framework - Post-Deployment Configuration"
+title: "Azure VM Automation Framework - Enterprise Configuration Management"
 date: 2025-01-02
-description: "Azure automation case study: Modular PowerShell framework for zero-touch VM post-deployment configuration including OS hardening, software installation, and compliance scanning."
-tags: ["PowerShell", "Azure VMs", "Configuration Management", "Automation", "Azure DevOps", "IaC"]
-keywords: ["azure vm automation", "powershell configuration", "vm post-deployment", "azure devops automation", "configuration management", "azure architect"]
+description: "Enterprise Azure automation case study: Modular PowerShell framework for zero-touch VM post-deployment. OS hardening, compliance scanning, and Azure Landing Zone integration with full IaC approach."
+tags: ["PowerShell", "Azure VMs", "Configuration Management", "Azure Landing Zone", "Azure DevOps", "IaC"]
+keywords: ["azure vm automation", "azure landing zone", "enterprise configuration management", "azure devops automation", "azure compliance", "azure architect", "infrastructure as code"]
 ---
 
 ### The Challenge

@@ -1,11 +1,11 @@
 
 
 ---
-title: "Azure FinOps Cost Optimization - Custom Intelligence Tool"
+title: "Azure FinOps Cost Optimization - Enterprise Cloud Cost Management"
 date: 2025-01-10
-description: "Azure cost optimization case study: Custom Python-based FinOps tool that outperformed Azure Advisor, achieving 25% cloud spend reduction through automated resource governance and IaC tagging enforcement."
-tags: ["FinOps", "Azure", "Python", "Cost-Optimization", "Azure DevOps", "Cloud Architecture"]
-keywords: ["azure finops", "azure cost optimization", "cloud cost management", "azure advisor alternative", "infrastructure as code", "azure architect"]
+description: "Azure FinOps case study: Custom Python-based cost intelligence tool leveraging Azure Resource Graph, achieving 25% cloud spend reduction through automated governance, tagging enforcement, and resource lifecycle management."
+tags: ["FinOps", "Azure", "Python", "Cost-Optimization", "Azure Governance", "Cloud Architecture"]
+keywords: ["azure finops", "azure cost optimization", "cloud cost management", "azure resource graph", "azure governance", "azure architect", "enterprise cloud architecture", "azure landing zone cost"]
 ---
 
 ### The Challenge
