@@ -1,11 +1,18 @@
 <script>
-    // --- 0. KONFIGURACE DOSTUPNOSTI (Změňte POUZE tyto dvě proměnné) ---
+    // --- 0. KONFIGURACE DOSTUPNOSTI (Změňte POUZE tyto proměnné) ---
     const availabilityStatus = 'free'; // Může být 'free', 'partial', nebo 'busy'
     const nextAvailabilityDate = 'Q2 2026'; // Zobrazí se jen, když je 'busy'
+    const calendlyUrl = 'https://calendly.com/YOUR_USERNAME/15min'; // ZMĚŇ na svůj Calendly link
 
     // Detect language from URL
     const isCS = window.location.pathname.startsWith('/cs');
     const langBase = isCS ? '/cs/' : '/';
+
+    // Function to open Calendly popup
+    function openCalendly() {
+        Calendly.initPopupWidget({url: calendlyUrl});
+        return false;
+    }
 
     const statusMap = {
         'free': {
@@ -13,8 +20,8 @@
             color: 'text-green-400',
             bg: 'bg-green-900/30 border-green-800',
             text: isCS ? 'Volný pro nové projekty' : 'Available for New Projects',
-            cta_hero_html: `<a href="mailto:info@maxinthecloud.com" class="px-8 py-4 bg-white text-black font-bold rounded hover:bg-gray-200 transition text-center">${isCS ? 'Domluvit konzultaci' : 'Book a Consultation'}</a>`,
-            cta_nav_html: `<a href="mailto:info@maxinthecloud.com" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-bold uppercase tracking-wider transition">${isCS ? 'Najmout' : 'Hire Me'}</a>`,
+            cta_hero_html: `<button onclick="openCalendly()" class="px-8 py-4 bg-white text-black font-bold rounded hover:bg-gray-200 transition text-center cursor-pointer">${isCS ? 'Domluvit konzultaci' : 'Book a Consultation'}</button>`,
+            cta_nav_html: `<button onclick="openCalendly()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-bold uppercase tracking-wider transition cursor-pointer">${isCS ? 'Najmout' : 'Hire Me'}</button>`,
             cta_label: isCS ? 'Najmout' : 'Hire Me'
         },
         'partial': {
@@ -22,8 +29,8 @@
             color: 'text-yellow-400',
             bg: 'bg-yellow-900/30 border-yellow-800',
             text: isCS ? 'Omezená kapacita (pouze posouzení projektu)' : 'Limited Capacity (Project Review Only)',
-            cta_hero_html: `<a href="mailto:info@maxinthecloud.com" class="px-8 py-4 bg-yellow-600 text-black font-bold rounded hover:bg-yellow-700 transition text-center">${isCS ? 'Dotaz na dostupnost' : 'Inquire Availability'}</a>`,
-            cta_nav_html: `<a href="mailto:info@maxinthecloud.com" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-black rounded text-xs font-bold uppercase tracking-wider transition">${isCS ? 'Dotaz' : 'Inquire'}</a>`,
+            cta_hero_html: `<button onclick="openCalendly()" class="px-8 py-4 bg-yellow-600 text-black font-bold rounded hover:bg-yellow-700 transition text-center cursor-pointer">${isCS ? 'Dotaz na dostupnost' : 'Inquire Availability'}</button>`,
+            cta_nav_html: `<button onclick="openCalendly()" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-black rounded text-xs font-bold uppercase tracking-wider transition cursor-pointer">${isCS ? 'Dotaz' : 'Inquire'}</button>`,
             cta_label: isCS ? 'Dotaz' : 'Inquire'
         },
         'busy': {
