@@ -1,17 +1,32 @@
-<meta name="description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+{{- $defaultDescription := "Expert Azure Architect & Terraform DevOps Engineer serving Fortune 500 clients worldwide. Specializing in IaC, CI/CD pipelines, and cloud infrastructure automation." -}}
+{{- $description := .Params.description | default $defaultDescription -}}
+{{- $defaultKeywords := "azure devops, azure architect, terraform, infrastructure as code, cicd pipelines, devops engineer, cloud automation, github actions" -}}
+{{- $keywords := "" -}}
+{{- if .Params.keywords -}}
+    {{- $keywords = delimit .Params.keywords ", " -}}
+{{- else -}}
+    {{- $keywords = $defaultKeywords -}}
+{{- end -}}
+
+<meta name="description" content="{{ $description }}">
+<meta name="keywords" content="{{ $keywords }}">
+<meta name="author" content="Max - Azure DevOps Architect">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ .Permalink }}">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}">
-<meta property="og:description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+<meta property="og:description" content="{{ $description }}">
 <meta property="og:image" content="{{ .Site.BaseURL }}images/og-image.jpg">
+<meta property="og:site_name" content="{{ .Site.Title }}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ .Permalink }}">
 <meta property="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
-<meta property="twitter:description" content="Expert Azure & Terraform DevOps Engineer serving Fortune 500 clients worldwide with a 5-year zero-downtime track record.">
+<meta property="twitter:description" content="{{ $description }}">
 <meta property="twitter:image" content="{{ .Site.BaseURL }}images/og-image.jpg">
 
 <script src="https://cdn.tailwindcss.com"></script>

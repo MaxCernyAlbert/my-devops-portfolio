@@ -1,8 +1,9 @@
 ---
-title: "Environment Configuration as Code"
+title: "Terraform Environment Variables Automation - IaC Configuration"
 date: 2025-01-07
-description: "Eliminated manual variable management chaos in GitHub/ADO by automating environment configuration with full auditability and naming standards."
-tags: ["GitHub Variables", "Azure DevOps", "Automation", "Terraform"]
+description: "Infrastructure as Code case study: Automated environment variable and secret management across GitHub and Azure DevOps using Terraform, eliminating manual configuration with 100% auditability."
+tags: ["GitHub Variables", "Azure DevOps", "Automation", "Terraform", "IaC", "Secret Management"]
+keywords: ["terraform variables", "environment configuration", "azure devops automation", "github secrets management", "infrastructure as code", "devops automation"]
 ---
 
 ### The Challenge

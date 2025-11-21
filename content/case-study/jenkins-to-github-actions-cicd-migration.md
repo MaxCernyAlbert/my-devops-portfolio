@@ -1,8 +1,9 @@
 ---
-title: "Unified CI/CD Migration"
+title: "Jenkins to GitHub Actions CI/CD Migration - Terraform IaC"
 date: 2025-01-08
-description: "Migrating complex pipelines from Jenkins/ADO to GitHub Actions with zero downtime and full Terraform adoption."
-tags: ["Migration", "GitHub Actions", "Jenkins", "Terraform"]
+description: "Enterprise CI/CD migration case study: Zero-downtime migration from Jenkins and Azure DevOps to GitHub Actions with full Terraform adoption, reducing pipeline execution time by 30%."
+tags: ["Migration", "GitHub Actions", "Jenkins", "Terraform", "Azure DevOps", "CI/CD Pipelines"]
+keywords: ["jenkins migration", "github actions migration", "azure devops migration", "terraform cicd", "devops pipeline", "iac automation"]
 ---
 
 ### The Challenge

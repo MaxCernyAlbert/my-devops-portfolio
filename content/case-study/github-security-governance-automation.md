@@ -1,8 +1,9 @@
 ---
-title: "Governance as Code"
+title: "GitHub Security Governance Automation - Policy as Code"
 date: 2025-01-09
-description: "Automating security policies across 500+ repositories ensuring 100% compliance without manual intervention."
-tags: ["Governance", "GitHub", "TypeScript", "Security"]
+description: "Enterprise GitHub governance case study: Automated security policy enforcement across 500+ repositories using TypeScript-based GitHub Actions, achieving 100% compliance with zero manual intervention."
+tags: ["Governance", "GitHub", "TypeScript", "Security", "DevSecOps", "CI/CD Pipelines"]
+keywords: ["github governance", "security automation", "devops security", "branch protection automation", "github actions security", "enterprise github"]
 ---
 
 ### The Challenge

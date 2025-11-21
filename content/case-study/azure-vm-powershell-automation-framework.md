@@ -1,8 +1,9 @@
 ---
-title: "VM Configuration Framework"
+title: "Azure VM PowerShell Automation Framework - Post-Deployment Configuration"
 date: 2025-01-02
-description: "Developed sophisticated PowerShell modules for automated post-deployment configuration of Azure VMs with centralized management and version control."
-tags: ["PowerShell", "Azure VMs", "Configuration Management", "Automation"]
+description: "Azure automation case study: Modular PowerShell framework for zero-touch VM post-deployment configuration including OS hardening, software installation, and compliance scanning."
+tags: ["PowerShell", "Azure VMs", "Configuration Management", "Automation", "Azure DevOps", "IaC"]
+keywords: ["azure vm automation", "powershell configuration", "vm post-deployment", "azure devops automation", "configuration management", "azure architect"]
 ---
 
 ### The Challenge
