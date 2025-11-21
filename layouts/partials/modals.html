@@ -16,3 +16,60 @@
         </div>
     </div>
 </div>
+
+<!-- Cookie Consent Banner (GDPR Compliant) -->
+<div id="cookie-banner" class="hidden fixed bottom-0 left-0 right-0 z-[200] bg-[#111827] border-t border-gray-700 p-4 shadow-2xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-gray-300">
+            <p class="font-semibold text-white mb-1">
+                <i class="fa-solid fa-cookie-bite text-blue-400 mr-2"></i>
+                {{ if $isCS }}Cookies & Soukromí{{ else }}Cookies & Privacy{{ end }}
+            </p>
+            <p class="text-gray-400">
+                {{ if $isCS }}Používáme cookies pro analýzu návštěvnosti (Google Analytics). Můžete je přijmout nebo odmítnout.{{ else }}We use cookies for analytics (Google Analytics). You can accept or reject them.{{ end }}
+            </p>
+        </div>
+        <div class="flex gap-3 flex-shrink-0">
+            <button onclick="rejectCookies()" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-600 rounded-lg hover:border-gray-500 transition">
+                {{ if $isCS }}Odmítnout{{ else }}Reject{{ end }}
+            </button>
+            <button onclick="acceptCookies()" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition">
+                {{ if $isCS }}Přijmout{{ else }}Accept{{ end }}
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Cookie Consent Functions
+function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'granted');
+    gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+    });
+    hideCookieBanner();
+}
+
+function rejectCookies() {
+    localStorage.setItem('cookie_consent', 'denied');
+    gtag('consent', 'update', {
+        'analytics_storage': 'denied'
+    });
+    hideCookieBanner();
+}
+
+function hideCookieBanner() {
+    document.getElementById('cookie-banner').classList.add('hidden');
+}
+
+function showCookieBanner() {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+}
+
+// Show banner if no consent stored
+document.addEventListener('DOMContentLoaded', function() {
+    if (!localStorage.getItem('cookie_consent')) {
+        showCookieBanner();
+    }
+});
+</script>
