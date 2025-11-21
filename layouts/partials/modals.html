@@ -1,17 +1,18 @@
+{{ $isCS := eq .Site.Language.Lang "cs" }}
 <div id="protocol-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
     <div class="bg-[#111827] border border-gray-700 rounded-2xl max-w-3xl w-full p-8 relative shadow-2xl animate-scale-up">
         <button onclick="closeModal('protocol-modal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fa-solid fa-xmark text-2xl"></i></button>
-        <h2 class="text-2xl font-bold text-white mb-2">My 4-Week Onboarding Protocol</h2>
-        <p class="text-gray-400 mb-6 text-sm">Structured engagement designed to deliver value from day one.</p>
+        <h2 class="text-2xl font-bold text-white mb-2">{{ if $isCS }}Můj 4týdenní onboarding protokol{{ else }}My 4-Week Onboarding Protocol{{ end }}</h2>
+        <p class="text-gray-400 mb-6 text-sm">{{ if $isCS }}Strukturovaná spolupráce navržená tak, aby přinášela hodnotu od prvního dne.{{ else }}Structured engagement designed to deliver value from day one.{{ end }}</p>
         <div class="space-y-4 text-sm">
-            <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">W1</div><div class="text-gray-300"><strong>Discovery & Alignment:</strong> Environment access, architecture mapping, understanding business expectations and pain points.</div></div>
-            <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">W2</div><div class="text-gray-300"><strong>Quick Wins:</strong> Identifying and implementing immediate improvements. <span class="text-green-400">Often pays for itself.</span></div></div>
-            <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">W3</div><div class="text-gray-300"><strong>Strategic Roadmap:</strong> Presenting a 6-12 month plan for IaC adoption, automation, and migration priorities.</div></div>
-            <div class="flex gap-4"><div class="font-mono text-green-400 font-bold w-8">W4</div><div class="text-gray-300"><strong>First Production Delivery:</strong> Tangible output shipped—pipeline, module, or automation live in production.</div></div>
+            <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">T1</div><div class="text-gray-300"><strong>{{ if $isCS }}Discovery & Alignment:{{ else }}Discovery & Alignment:{{ end }}</strong> {{ if $isCS }}Přístup k prostředí, mapování architektury, pochopení business očekávání a problémů.{{ else }}Environment access, architecture mapping, understanding business expectations and pain points.{{ end }}</div></div>
+            <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">T2</div><div class="text-gray-300"><strong>{{ if $isCS }}Quick Wins:{{ else }}Quick Wins:{{ end }}</strong> {{ if $isCS }}Identifikace a implementace okamžitých vylepšení.{{ else }}Identifying and implementing immediate improvements.{{ end }} <span class="text-green-400">{{ if $isCS }}Často se zaplatí samo.{{ else }}Often pays for itself.{{ end }}</span></div></div>
+            <div class="flex gap-4"><div class="font-mono text-blue-400 font-bold w-8">T3</div><div class="text-gray-300"><strong>{{ if $isCS }}Strategický plán:{{ else }}Strategic Roadmap:{{ end }}</strong> {{ if $isCS }}Prezentace 6-12 měsíčního plánu pro adopci IaC, automatizaci a priority migrace.{{ else }}Presenting a 6-12 month plan for IaC adoption, automation, and migration priorities.{{ end }}</div></div>
+            <div class="flex gap-4"><div class="font-mono text-green-400 font-bold w-8">T4</div><div class="text-gray-300"><strong>{{ if $isCS }}První produkční dodávka:{{ else }}First Production Delivery:{{ end }}</strong> {{ if $isCS }}Hmatatelný výstup dodaný—pipeline, modul nebo automatizace živě v produkci.{{ else }}Tangible output shipped—pipeline, module, or automation live in production.{{ end }}</div></div>
         </div>
         <div class="mt-8 pt-6 border-t border-gray-800 bg-blue-900/10 p-4 rounded border border-blue-900/30 text-center">
-            <p class="text-green-400 font-bold text-sm"><i class="fa-solid fa-shield-halved"></i> Risk-Free Guarantee</p>
-            <p class="text-xs text-gray-400 mt-1">If you are not satisfied with the audit and roadmap presented in Week 3, the contract can be terminated immediately with zero cost to you.</p>
+            <p class="text-green-400 font-bold text-sm"><i class="fa-solid fa-shield-halved"></i> {{ if $isCS }}Garance bez rizika{{ else }}Risk-Free Guarantee{{ end }}</p>
+            <p class="text-xs text-gray-400 mt-1">{{ if $isCS }}Pokud nebudete spokojeni s auditem a plánem prezentovaným ve 3. týdnu, smlouva může být okamžitě ukončena bez jakýchkoli nákladů pro vás.{{ else }}If you are not satisfied with the audit and roadmap presented in Week 3, the contract can be terminated immediately with zero cost to you.{{ end }}</p>
         </div>
     </div>
 </div>
