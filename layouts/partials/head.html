@@ -46,6 +46,88 @@
 <meta property="twitter:description" content="{{ $description }}">
 <meta property="twitter:image" content="{{ .Site.BaseURL }}images/og-image.svg">
 
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "url": "{{ .Site.BaseURL }}",
+      "name": "MaxInTheCloud",
+      "description": "{{ $description }}",
+      "inLanguage": ["en", "cs"]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ .Site.BaseURL }}#person",
+      "name": "Max",
+      "jobTitle": "Senior Azure DevOps Consultant & Cloud Architect",
+      "description": "Senior Azure DevOps Consultant with 20+ years enterprise experience specializing in Azure Landing Zones, Terraform, Bicep, GitHub Actions, and enterprise cloud architecture.",
+      "url": "{{ .Site.BaseURL }}",
+      "image": "{{ .Site.BaseURL }}images/og-image.svg",
+      "sameAs": [
+        "https://www.linkedin.com/in/yourprofile",
+        "https://github.com/MaxCernyAlbert"
+      ],
+      "knowsAbout": [
+        "Azure DevOps",
+        "Cloud Architecture",
+        "Terraform",
+        "Bicep",
+        "Infrastructure as Code",
+        "GitHub Actions",
+        "Azure Landing Zones",
+        "DevSecOps",
+        "Kubernetes",
+        "CI/CD Automation"
+      ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ .Site.BaseURL }}#service",
+      "name": "MaxInTheCloud - Azure DevOps Consulting",
+      "description": "Enterprise Azure DevOps consulting services specializing in Landing Zones, Terraform IaC, GitHub Actions, and cloud architecture for Fortune 500 clients.",
+      "url": "{{ .Site.BaseURL }}",
+      "image": "{{ .Site.BaseURL }}images/og-image.svg",
+      "priceRange": "$$$$",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "serviceType": [
+        "Azure Cloud Architecture",
+        "DevOps Consulting",
+        "Infrastructure as Code",
+        "CI/CD Pipeline Development",
+        "Cloud Migration",
+        "DevSecOps Implementation"
+      ],
+      "provider": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+    }
+    {{ if not .IsHome }},
+    {
+      "@type": "Article",
+      "headline": "{{ .Title }}",
+      "description": "{{ $description }}",
+      "url": "{{ .Permalink }}",
+      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+      "author": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      },
+      "publisher": {
+        "@id": "{{ .Site.BaseURL }}#person"
+      }
+    }
+    {{ end }}
+  ]
+}
+</script>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
