@@ -16,5 +16,8 @@ Designed a **Governance-as-Code engine** based on custom GitHub Actions. It auto
 
 ### The Impact
 
-- 100% Compliance Audit Pass
-- Zero Manual Ops for onboarding
+{{< impact-grid >}}
+100%|Compliance Audit Pass|green
+500+|Repos Governed|blue
+Zero|Manual Ops|purple
+{{< /impact-grid >}}

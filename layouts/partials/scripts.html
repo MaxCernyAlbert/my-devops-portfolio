@@ -29,7 +29,7 @@
             text: `Fully Booked (Available ${nextAvailabilityDate})`,
             cta_hero_html: `
                 <button onclick="openModal('notify-modal')" class="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded transition text-center">Notify Me When Available</button>
-                <a href="#work" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>
+                <a href="#case-studies" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>
             `,
             cta_nav_html: '<button onclick="openModal(\'notify-modal\')" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded text-xs font-bold uppercase tracking-wider transition">Notify</button>',
             cta_label: 'Notify'
@@ -182,7 +182,7 @@
 
         // 2. CTA v Hero sekci
         document.getElementById('hero-cta-placeholder').innerHTML = status.cta_hero_html +
-            '<a href="#work" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>';
+            '<a href="#case-studies" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">View Highlights <i class="fa-solid fa-arrow-down"></i></a>';
 
         // 3. CTA v Navigaci
         document.getElementById('nav-cta-placeholder').innerHTML = status.cta_nav_html;
