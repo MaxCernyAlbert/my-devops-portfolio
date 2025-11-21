@@ -208,7 +208,7 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Engineering Case Studies</h2>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-yellow-500 transition group cursor-pointer" onclick="openCaseStudy('finops')">
                     <div class="w-12 h-12 bg-yellow-900/20 text-yellow-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
@@ -229,6 +229,34 @@
                     <h3 class="text-xl font-bold text-white mb-2">Unified CI/CD Migration</h3>
                     <p class="text-gray-400 text-sm mb-4 line-clamp-3">Migrating complex pipelines from Jenkins/ADO to GitHub Actions with zero downtime and full Terraform adoption.</p>
                     <span class="text-purple-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-green-500 transition group cursor-pointer" onclick="openCaseStudy('envconfig')">
+                    <div class="w-12 h-12 bg-green-900/20 text-green-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-cog"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Environment Config as Code</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Eliminated manual variable management chaos in GitHub/ADO by automating environment configuration with full auditability and naming standards.</p>
+                    <span class="text-green-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-orange-500 transition group cursor-pointer" onclick="openCaseStudy('reusableactions')">
+                    <div class="w-12 h-12 bg-orange-900/20 text-orange-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Developer Self-Service CI/CD</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Built a library of modular, versioned GitHub Actions enabling developers to build complete CI/CD pipelines without DevOps bottlenecks.</p>
+                    <span class="text-orange-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-cyan-500 transition group cursor-pointer" onclick="openCaseStudy('fastrfc')">
+                    <div class="w-12 h-12 bg-cyan-900/20 text-cyan-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-ticket"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Automated ServiceNow RFCs</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Integrated ServiceNow FastRFC workflow into GitHub Actions for automated, traceable deployments without manual intervention.</p>
+                    <span class="text-cyan-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="bg-[#111827] border border-gray-800 p-8 rounded-2xl hover:border-red-500 transition group cursor-pointer" onclick="openCaseStudy('secretrotation')">
+                    <div class="w-12 h-12 bg-red-900/20 text-red-500 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition"><i class="fa-solid fa-key"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Zero-Touch Secret Rotation</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-3">Automated lifecycle management for Service Principal secrets and Storage Account keys with expiration monitoring and auto-rotation to Key Vault.</p>
+                    <span class="text-red-500 text-sm font-bold flex items-center gap-2">Read Case Study <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
 
             </div>
