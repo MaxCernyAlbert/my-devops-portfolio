@@ -1,6 +1,7 @@
 {{ $isCS := eq .Site.Language.Lang "cs" }}
 {{ $baseURL := .Site.BaseURL }}
-{{ $langToggleURL := cond $isCS (strings.TrimSuffix "/" .Site.BaseURL | printf "%s/") (printf "%scs/" (strings.TrimSuffix "/" .Site.BaseURL)) }}
+{{/* Language toggle - use relative paths for local dev compatibility */}}
+{{ $langToggleURL := cond $isCS "/" "/cs/" }}
 
 <nav class="fixed w-full z-50 bg-[#0B0F19]/90 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
