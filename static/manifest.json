@@ -1,0 +1,21 @@
+{
+  "name": "MaxInTheCloud - Azure DevOps Consultant",
+  "short_name": "MaxInTheCloud",
+  "description": "Senior Azure DevOps Consultant & Cloud Architect specializing in Landing Zones, Terraform IaC, GitHub Actions, and enterprise cloud architecture.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#0B0F19",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}

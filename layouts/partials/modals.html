@@ -73,3 +73,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" onclick="scrollToTop()" class="hidden fixed bottom-6 right-6 z-[90] p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 opacity-0" aria-label="{{ if $isCS }}Nahoru{{ else }}Back to top{{ end }}">
+    <i class="fa-solid fa-arrow-up text-lg"></i>
+</button>
+
+<script>
+// Back to Top Button functionality
+const backToTopBtn = document.getElementById('back-to-top');
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) {
+        backToTopBtn.classList.remove('hidden', 'opacity-0');
+        backToTopBtn.classList.add('opacity-100');
+    } else {
+        backToTopBtn.classList.add('opacity-0');
+        setTimeout(() => {
+            if (window.scrollY <= 500) {
+                backToTopBtn.classList.add('hidden');
+            }
+        }, 300);
+    }
+});
+</script>

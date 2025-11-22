@@ -3,6 +3,11 @@
 {{ $langBase := cond $isCS "/cs/" "/" }}
 {{ $langToggleURL := cond $isCS "/" "/cs/" }}
 
+<!-- Skip to content link for accessibility -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:outline-none">
+    {{ if $isCS }}Přeskočit na obsah{{ else }}Skip to content{{ end }}
+</a>
+
 <nav class="fixed w-full z-50 bg-[#0B0F19]/90 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="{{ $langBase }}" class="font-mono text-xl font-bold tracking-tighter text-white cursor-pointer">
