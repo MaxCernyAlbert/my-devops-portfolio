@@ -1,30 +1,40 @@
 {{ define "main" }}
+{{ $isCS := eq .Site.Language.Lang "cs" }}
+{{ $langBase := cond $isCS "/cs/" "/" }}
 <div class="min-h-screen flex items-center justify-center px-6">
     <div class="text-center max-w-2xl">
         <div class="mb-8">
-            <i class="fa-solid fa-triangle-exclamation text-8xl text-yellow-500 mb-6"></i>
+            <div class="text-8xl text-yellow-500 mb-6">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
             <h1 class="text-7xl font-extrabold mb-4">
                 <span class="gradient-text">404</span>
             </h1>
-            <h2 class="text-3xl font-bold text-white mb-4">Page Not Found</h2>
+            <h2 class="text-3xl font-bold text-white mb-4">
+                {{ if $isCS }}Stránka nenalezena{{ else }}Page Not Found{{ end }}
+            </h2>
             <p class="text-gray-400 text-lg mb-8">
-                The page you're looking for doesn't exist or has been moved.
+                {{ if $isCS }}Stránka, kterou hledáte, neexistuje nebo byla přesunuta.{{ else }}The page you're looking for doesn't exist or has been moved.{{ end }}
             </p>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ site.BaseURL }}" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition">
-                <i class="fa-solid fa-home mr-2"></i> Go to Homepage
+            <a href="{{ $langBase }}" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition">
+                <i class="fa-solid fa-home mr-2"></i> {{ if $isCS }}Domů{{ else }}Go to Homepage{{ end }}
             </a>
-            <a href="{{ site.BaseURL }}#contact" class="px-6 py-3 border border-gray-700 hover:border-gray-600 text-gray-300 hover:text-white font-bold rounded transition">
-                <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+            <a href="{{ $langBase }}#contact" class="px-6 py-3 border border-gray-700 hover:border-gray-600 text-gray-300 hover:text-white font-bold rounded transition">
+                <i class="fa-solid fa-envelope mr-2"></i> {{ if $isCS }}Kontakt{{ else }}Contact Me{{ end }}
             </a>
         </div>
 
         <div class="mt-12 p-6 bg-gray-800/50 rounded-lg border border-gray-700">
             <p class="text-sm text-gray-400 font-mono">
                 <i class="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>
-                Looking for case studies? Check out my <a href="{{ site.BaseURL }}#case-studies" class="text-blue-400 hover:text-blue-300 underline">case studies</a> or view <a href="{{ site.BaseURL }}#services" class="text-blue-400 hover:text-blue-300 underline">services</a>.
+                {{ if $isCS }}
+                Hledáte případové studie? Podívejte se na mé <a href="{{ $langBase }}#case-studies" class="text-blue-400 hover:text-blue-300 underline">případové studie</a> nebo <a href="{{ $langBase }}#services" class="text-blue-400 hover:text-blue-300 underline">služby</a>.
+                {{ else }}
+                Looking for case studies? Check out my <a href="{{ $langBase }}#case-studies" class="text-blue-400 hover:text-blue-300 underline">case studies</a> or view <a href="{{ $langBase }}#services" class="text-blue-400 hover:text-blue-300 underline">services</a>.
+                {{ end }}
             </p>
         </div>
     </div>

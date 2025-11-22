@@ -63,10 +63,10 @@
 <meta name="author" content="Max - Azure DevOps Architect">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{{ .Permalink }}">
-{{ range .Translations }}
-<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-{{ end }}
-<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+<!-- hreflang tags for multilingual SEO -->
+<link rel="alternate" hreflang="en" href="{{ replace .Permalink "/cs/" "/" }}">
+<link rel="alternate" hreflang="cs" href="{{ if eq .Lang "en" }}{{ replace .Permalink "/" "/cs/" 1 }}{{ else }}{{ .Permalink }}{{ end }}">
+<link rel="alternate" hreflang="x-default" href="{{ replace .Permalink "/cs/" "/" }}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
