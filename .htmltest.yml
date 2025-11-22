@@ -1,0 +1,44 @@
+# htmltest configuration
+# https://github.com/wjdp/htmltest
+
+DirectoryPath: "./public"
+
+# Check internal links
+CheckInternal: true
+
+# Check external links (set to false to speed up CI)
+CheckExternal: false
+
+# Check mailto links
+CheckMailto: false
+
+# Check telephone links
+CheckTel: false
+
+# Ignore specific URLs or patterns
+IgnoreURLs:
+  - "^https://calendly.com"
+  - "^https://www.linkedin.com"
+  - "^https://github.com"
+  - "^https://fonts.googleapis.com"
+  - "^https://fonts.gstatic.com"
+  - "^#"
+
+# Ignore specific directories
+IgnoreDirs:
+  - "images"
+
+# Timeout for external checks (if enabled)
+ExternalTimeout: 10
+
+# Output file for results
+OutputDir: ".htmltest"
+
+# Don't fail on warnings
+IgnoreAltMissing: true
+
+# Check favicons
+CheckFavicon: true
+
+# Enforce HTTPS on external links (if checking external)
+EnforceHTTPS: false
