@@ -1,4 +1,5 @@
 ---
+slug: "terraform-environment-variables-automation"
 title: "Terraform automatizace proměnných prostředí - Enterprise IaC konfigurace"
 date: 2025-01-07
 description: "Enterprise Infrastructure as Code případová studie: Automatizovaná správa proměnných prostředí a secrets napříč GitHub a Azure DevOps pomocí Terraform. 100% auditovatelnost s integrací Azure Governance."

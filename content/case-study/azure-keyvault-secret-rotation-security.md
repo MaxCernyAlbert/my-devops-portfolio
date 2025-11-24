@@ -1,4 +1,5 @@
 ---
+slug: "azure-keyvault-secret-rotation-security"
 title: "Azure Key Vault Secret Rotation - Enterprise Security Automation"
 date: 2025-01-04
 description: "Azure security automation case study: Zero-touch credential lifecycle management with automated Service Principal and Storage Account key rotation. Enterprise-grade Azure Key Vault automation eliminating security risks."

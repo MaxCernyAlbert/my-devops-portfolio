@@ -1,4 +1,5 @@
 ---
+slug: "azure-vm-powershell-automation-framework"
 title: "Azure VM Automation Framework - Enterprise Configuration Management"
 date: 2025-01-02
 description: "Enterprise Azure automation case study: Modular PowerShell framework for zero-touch VM post-deployment. OS hardening, compliance scanning, and Azure Landing Zone integration with full IaC approach."

@@ -1,4 +1,5 @@
 ---
+slug: "azure-integration-platform-terraform-bicep"
 title: "Azure integrační platforma - Enterprise Terraform & Bicep architektura"
 date: 2025-01-03
 description: "Enterprise Azure architektura případová studie: Integrační platforma využívající Service Bus, Logic Apps, API Management nasazená přes Terraform + Bicep IaC. Kompletní GitOps workflow s Azure Landing Zone vzory."

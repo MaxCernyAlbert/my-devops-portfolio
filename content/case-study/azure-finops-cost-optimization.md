@@ -1,6 +1,7 @@
 
 
 ---
+slug: "azure-finops-cost-optimization"
 title: "Azure FinOps Cost Optimization - Enterprise Cloud Cost Management"
 date: 2025-01-10
 description: "Azure FinOps case study: Custom Python-based cost intelligence tool leveraging Azure Resource Graph, achieving 25% cloud spend reduction through automated governance, tagging enforcement, and resource lifecycle management."

@@ -1,4 +1,5 @@
 ---
+slug: "jenkins-to-github-actions-cicd-migration"
 title: "Migrace Jenkins na GitHub Actions - Enterprise CI/CD transformace"
 date: 2025-01-08
 description: "Enterprise CI/CD transformace případová studie: Migrace bez výpadku z Jenkins a Azure DevOps na GitHub Actions. Terraform IaC, Policy as Code a integrace Azure Governance s 30% rychlejšími pipelines."

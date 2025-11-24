@@ -1,4 +1,5 @@
 ---
+slug: "azure-vm-powershell-automation-framework"
 title: "Azure VM automatizační framework - Enterprise správa konfigurace"
 date: 2025-01-02
 description: "Enterprise Azure automatizace případová studie: Modulární PowerShell framework pro zero-touch post-deployment VM. OS hardening, compliance scanning a integrace Azure Landing Zone s kompletním IaC přístupem."

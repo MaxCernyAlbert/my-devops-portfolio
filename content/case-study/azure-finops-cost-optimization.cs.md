@@ -1,4 +1,5 @@
 ---
+slug: "azure-finops-cost-optimization"
 title: "Azure FinOps optimalizace nákladů - Enterprise správa cloudových nákladů"
 date: 2025-01-10
 description: "Azure FinOps případová studie: Vlastní Python nástroj pro analýzu nákladů využívající Azure Resource Graph, dosažení 25% snížení cloudových výdajů prostřednictvím automatizované governance, vynucování tagů a správy životního cyklu zdrojů."

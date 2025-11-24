@@ -1,4 +1,5 @@
 ---
+slug: "github-actions-reusable-workflows-devops"
 title: "GitHub Actions Reusable Workflows - Enterprise CI/CD Platform"
 date: 2025-01-06
 description: "Enterprise CI/CD automation case study: Modular GitHub Actions library for Azure deployments enabling developer self-service. 95% reduction in DevOps tickets, 80% faster pipeline setup with Terraform integration."

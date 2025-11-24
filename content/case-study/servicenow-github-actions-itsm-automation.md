@@ -1,4 +1,5 @@
 ---
+slug: "servicenow-github-actions-itsm-automation"
 title: "ServiceNow GitHub Actions ITSM Automation - Enterprise Change Management"
 date: 2025-01-05
 description: "Enterprise ITSM automation case study: Automated ServiceNow FastRFC integration with GitHub Actions for Azure deployments. 100% compliant change management with zero manual intervention."

@@ -1,4 +1,5 @@
 ---
+slug: "azure-integration-platform-terraform-bicep"
 title: "Azure Integration Platform - Enterprise Terraform & Bicep Architecture"
 date: 2025-01-03
 description: "Enterprise Azure architecture case study: Integration platform using Service Bus, Logic Apps, API Management deployed via Terraform + Bicep IaC. Full GitOps workflow with Azure Landing Zone patterns."

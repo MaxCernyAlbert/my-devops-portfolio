@@ -1,4 +1,5 @@
 ---
+slug: "terraform-environment-variables-automation"
 title: "Terraform Environment Variables Automation - Enterprise IaC Configuration"
 date: 2025-01-07
 description: "Enterprise Infrastructure as Code case study: Automated environment variable and secret management across GitHub and Azure DevOps using Terraform. 100% auditability with Azure Governance integration."

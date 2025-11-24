@@ -1,4 +1,5 @@
 ---
+slug: "azure-keyvault-secret-rotation-security"
 title: "Azure Key Vault rotace secrets - Enterprise bezpečnostní automatizace"
 date: 2025-01-04
 description: "Azure bezpečnostní automatizace případová studie: Zero-touch správa životního cyklu credentials s automatizovanou rotací Service Principal a Storage Account klíčů. Enterprise-grade Azure Key Vault automatizace eliminující bezpečnostní rizika."

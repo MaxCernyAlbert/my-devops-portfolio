@@ -1,4 +1,5 @@
 ---
+slug: "github-security-governance-automation"
 title: "GitHub Security Governance automatizace - Enterprise DevSecOps"
 date: 2025-01-09
 description: "Enterprise GitHub governance případová studie: Automatizované vynucování bezpečnostních politik napříč 500+ repozitáři pomocí TypeScript GitHub Actions. DevSecOps compliance bez manuálního zásahu pro Azure DevOps prostředí."
