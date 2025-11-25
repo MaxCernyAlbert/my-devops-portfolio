@@ -20,5 +20,28 @@
         </div>
 
         <p class="text-gray-600 text-xs font-mono mt-8">Built with <i class="fa-brands fa-github mr-1"></i>GitHub Pages & <i class="fa-solid fa-feather mr-1"></i>Hugo. Brand: MaxInTheCloud.com.</p>
+
+        <div class="text-gray-700 text-[10px] font-mono mt-4 flex flex-wrap justify-center gap-x-4 gap-y-1">
+            <span title="Build time">
+                <i class="fa-solid fa-clock mr-1"></i>{{ now.Format "2006-01-02 15:04 MST" }}
+            </span>
+            {{ with getenv "COMMIT_SHA" }}
+            <a href="https://github.com/MaxCernyAlbert/my-devops-portfolio/commit/{{ . }}" target="_blank" class="hover:text-gray-500" title="View commit">
+                <i class="fa-solid fa-code-commit mr-1"></i>{{ substr . 0 7 }}
+            </a>
+            {{ else }}
+            <span title="Commit hash">
+                <i class="fa-solid fa-code-commit mr-1"></i>local
+            </span>
+            {{ end }}
+            {{ with getenv "BUILD_DURATION" }}
+            <span title="Build duration">
+                <i class="fa-solid fa-stopwatch mr-1"></i>{{ . }}
+            </span>
+            {{ end }}
+            <a href="https://github.com/MaxCernyAlbert/my-devops-portfolio" target="_blank" class="hover:text-gray-500" title="View source">
+                <i class="fa-brands fa-github mr-1"></i>Source
+            </a>
+        </div>
     </div>
 </footer>

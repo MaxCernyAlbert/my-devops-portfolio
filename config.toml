@@ -29,3 +29,7 @@ defaultContentLanguageInSubdir = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[security]
+  [security.funcs]
+    getenv = ["^HUGO_", "^CI$", "COMMIT_SHA", "BUILD_DURATION"]

@@ -45,10 +45,17 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          COMMIT_SHA: ${{ github.sha }}
         run: |
+          START_TIME=$(date +%s)
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+          END_TIME=$(date +%s)
+          BUILD_DURATION=$((END_TIME - START_TIME))
+          echo "Build completed in ${BUILD_DURATION}s"
+          # Rebuild with build duration (quick second pass)
+          COMMIT_SHA=${{ github.sha }} BUILD_DURATION="${BUILD_DURATION}s" hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       # --- TESTS ---
       - name: Install htmltest
