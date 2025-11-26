@@ -201,8 +201,7 @@
         document.getElementById('status-badge-placeholder').insertAdjacentHTML('afterbegin', badgeHtml);
 
         // 2. CTA v Hero sekci
-        document.getElementById('hero-cta-placeholder').innerHTML = status.cta_hero_html +
-            `<a href="${langBase}#case-studies" class="px-8 py-4 border border-gray-700 text-gray-300 font-bold rounded hover:border-blue-500 hover:text-white transition text-center flex items-center justify-center gap-2">${isCS ? 'Zobrazit projekty' : 'View Highlights'} <i class="fa-solid fa-arrow-down"></i></a>`;
+        document.getElementById('hero-cta-placeholder').innerHTML = status.cta_hero_html;
 
         // 3. CTA v Navigaci
         document.getElementById('nav-cta-placeholder').innerHTML = status.cta_nav_html;
